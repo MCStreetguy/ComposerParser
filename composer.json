@@ -1,0 +1,21 @@
+{
+    "name": "mcstreetguy/composer-lock-parser",
+    "description": "A composer lockfile parser.",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/MCStreetguy/ComposerLockParser",
+    "authors": [
+        {
+            "name": "Maximilian Schmidt",
+            "email": "maximilianschmidt404@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "MCStreetguy\\": "src/"
+        }
+    },
+    "require": {
+        "kint-php/kint": "^2.2"
+    }
+}
