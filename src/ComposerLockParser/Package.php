@@ -46,6 +46,7 @@ class Package
         $this->extra = (array_key_exists('extra', $config) ? $config['extra'] : []);
 
         $this->source = (array_key_exists('source', $config) ? new Source($config['source']) : new Source());
+        $this->dist = (array_key_exists('dist', $config) ? new Dist($config['dist']) : new Dist());
 
         $this->require = (array_key_exists('require', $config) ? $config['require'] : []);
         $this->requireDev = (array_key_exists('require-dev', $config) ? $config['require-dev'] : []);
@@ -102,6 +103,11 @@ class Package
     public function getSource() : Source
     {
         return $this->source;
+    }
+
+    public function getDist() : Dist
+    {
+        return $this->dist;
     }
 
     public function getRequire() : array
