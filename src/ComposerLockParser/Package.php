@@ -4,6 +4,35 @@ namespace MCStreetguy\ComposerLockParser;
 
 class Package
 {
+    protected $name;
+    
+    protected $version;
+    
+    protected $type;
+    
+    protected $authors;
+    
+    protected $description;
+    
+    protected $homepage;
+    
+    protected $keywords;
+    
+    protected $time;
+    
+    protected $extra;
+
+    /**
+     * @var Source
+     */
+    protected $source;
+
+    protected $require;
+
+    protected $requireDev;
+
+    protected $license;
+
     public function __construct(array $config)
     {
         $this->name = (array_key_exists('name', $config) ? $config['name'] : '');
@@ -15,6 +44,14 @@ class Package
         $this->keywords = (array_key_exists('keywords', $config) ? $config['keywords'] : []);
         $this->time = (array_key_exists('time', $config) ? $config['time'] : '');
         $this->extra = (array_key_exists('extra', $config) ? $config['extra'] : []);
+
+        $this->source = (array_key_exists('source', $config) ? new Source($config['source']) : new Source());
+
+        $this->require = (array_key_exists('require', $config) ? $config['require'] : []);
+        $this->requireDev = (array_key_exists('require-dev', $config) ? $config['require-dev'] : []);
+
+        $this->license = (array_key_exists('license', $config) ? $config['license'] : ['']);
+        $this->license = (is_array($this->license) ? $this->license[0] : $this->license);
     }
 
     public function getName() : string
@@ -60,5 +97,25 @@ class Package
     public function getExtra() : array
     {
         return $this->extra;
+    }
+
+    public function getSource() : Source
+    {
+        return $this->source;
+    }
+
+    public function getRequire() : array
+    {
+        return $this->require;
+    }
+
+    public function getRequireDev() : array
+    {
+        return $this->requireDev;
+    }
+
+    public function getLicense() : string
+    {
+        return $this->license;
     }
 }
