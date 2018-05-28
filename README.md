@@ -35,7 +35,7 @@ foreach ($packages as $package) {
 
 ### Reference
 
-**class ComposerLockParser**
+**class [ComposerLockParser](https://github.com/MCStreetguy/ComposerLockParser/blob/master/src/ComposerLockParser.php)**
 
 | Method | Returns |
 |:-------|--------:|
@@ -43,7 +43,7 @@ foreach ($packages as $package) {
 | `getPackages()` | `array<Package>` |
 | `getDevPackages()` | `array<Package>` |
 
-**class Package**
+**class [Package](https://github.com/MCStreetguy/ComposerLockParser/blob/master/src/ComposerLockParser/Package.php)**
 
 | Method | Returns |
 |:-------|--------:|
@@ -62,7 +62,7 @@ foreach ($packages as $package) {
 | `getRequireDev()` | `array` |
 | `getLicense()` | `string` |
 
-**class Source**
+**class [Source](https://github.com/MCStreetguy/ComposerLockParser/blob/master/src/ComposerLockParser/Source.php)**
 
 | Method | Returns |
 |:-------|--------:|
@@ -70,7 +70,7 @@ foreach ($packages as $package) {
 | `getUrl()` | `string` |
 | `getReference()` | `string` |
 
-**class Dist**
+**class [Dist](https://github.com/MCStreetguy/ComposerLockParser/blob/master/src/ComposerLockParser/Dist.php)**
 
 | Method | Returns |
 |:-------|--------:|
