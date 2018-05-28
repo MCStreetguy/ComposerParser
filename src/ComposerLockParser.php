@@ -43,12 +43,12 @@ class ComposerLockParser
 
     public function getDevPackages() : array
     {
-        if (empty($this->lock) || !array_key_exists('packages', $this->lock)) {
+        if (empty($this->lock) || !array_key_exists('packages-dev', $this->lock)) {
             return [];
         }
 
         $list = [];
-        foreach ($this->lock['dev-packages'] as $package) {
+        foreach ($this->lock['packages-dev'] as $package) {
             $list[] = new Package($package);
         }
 
