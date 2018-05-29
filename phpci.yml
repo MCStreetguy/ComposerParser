@@ -1,6 +1,6 @@
 build_settings:
   ignore:
-    - "vendor"
+    - "vendor/"
     - "tests/"
 
 setup:
@@ -13,6 +13,7 @@ test:
   php_code_sniffer:
     path: "src/"
     standard: "PSR1,PSR2"
+    allowed_warnings: 10
   php_docblock_checker:
     path: "src/"
   php_cpd:
@@ -27,6 +28,7 @@ test:
       - "design"
       - "naming"
       - "unusedcode"
+    zero_config: true
   php_unit:
     config: "phpunit.xml"
     directory: "tests/"
