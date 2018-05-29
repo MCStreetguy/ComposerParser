@@ -44,6 +44,8 @@ abstract class Factory
             throw new \InvalidArgumentException("File at path '$path' does not exist or is not readable!", 1527613092);
         }
 
-        return file_get_contents($path);
+        $content = file_get_contents($path);
+        $object = json_decode($content, true);
+        return $object;
     }
 }
