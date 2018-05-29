@@ -1,6 +1,6 @@
 {
     "name": "mcstreetguy/composer-parser",
-    "description": "A composer lockfile parser.",
+    "description": "A composer.json and lockfile parser.",
     "type": "library",
     "license": "MIT",
     "homepage": "https://github.com/MCStreetguy/ComposerLockParser",
