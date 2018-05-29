@@ -2,126 +2,133 @@
 
 namespace MCStreetguy\ComposerLock;
 
+use MCStreetguy\ComposerJson\Autoload;
+use MCStreetguy\ComposerJson\Author;
+
+use MCStreetguy\ComposerJson\Service\PackageMap;
+
 class Package
 {
+    /**
+     * @var string
+     */
     protected $name;
 
+    /**
+     * @var string
+     */
     protected $version;
-
-    protected $type;
-
-    protected $authors;
-
-    protected $description;
-
-    protected $homepage;
-
-    protected $keywords;
-
-    protected $time;
-
-    protected $extra;
 
     /**
      * @var Source
      */
     protected $source;
+    
+    /**
+     * @var Dist
+     */
+    protected $dist;
 
+    /**
+     * @var PackageMap
+     */
     protected $require;
 
+    /**
+     * @var PackageMap
+     */
     protected $requireDev;
 
+    /**
+     * @var string
+     */
+    protected $type;
+
+    /**
+     * @var array
+     */
+    protected $extra;
+
+    /**
+     * @var Autoload
+     */
+    protected $autoload;
+
+    /**
+     * @var string
+     */
+    protected $notificationUrl;
+
+    /**
+     * @var array
+     */
     protected $license;
 
-    public function __construct(array $config)
+    /**
+     * @var Author[]
+     */
+    protected $authors;
+
+    /**
+     * @var string
+     */
+    protected $description;
+
+    /**
+     * @var array
+     */
+    protected $keywords;
+
+    /**
+     * @var string
+     */
+    protected $time;
+
+    /**
+     * Parses the given data and constructs a new instance from it.
+     *
+     * @param array $data The composer lockfile partial data
+     */
+    public function __construct(array $data = [])
     {
-        $this->name = (array_key_exists('name', $config) ? $config['name'] : '');
-        $this->version = (array_key_exists('version', $config) ? $config['version'] : '');
-        $this->type = (array_key_exists('type', $config) ? $config['type'] : '');
-        $this->authors = (array_key_exists('authors', $config) ? $config['authors'] : []);
-        $this->description = (array_key_exists('description', $config) ? $config['description'] : '');
-        $this->homepage = (array_key_exists('homepage', $config) ? $config['homepage'] : '');
-        $this->keywords = (array_key_exists('keywords', $config) ? $config['keywords'] : []);
-        $this->time = (array_key_exists('time', $config) ? $config['time'] : '');
-        $this->extra = (array_key_exists('extra', $config) ? $config['extra'] : []);
+        // String data
+        $this->name = (array_key_exists('name', $data) ? $data['name'] : '');
+        $this->version = (array_key_exists('version', $data) ? $data['version'] : '');
+        $this->type = (array_key_exists('type', $data) ? $data['type'] : '');
+        $this->notificationUrl = (array_key_exists('notification-url', $data) ? $data['notification-url'] : '');
+        $this->description = (array_key_exists('description', $data) ? $data['description'] : '');
+        $this->time = (array_key_exists('time', $data) ? $data['time'] : '');
 
-        $this->source = (array_key_exists('source', $config) ? new Source($config['source']) : new Source());
-        $this->dist = (array_key_exists('dist', $config) ? new Dist($config['dist']) : new Dist());
+        // Array data
+        $this->extra = (array_key_exists('extra', $data) ? $data['extra'] : []);
+        $this->keywords = (array_key_exists('keywords', $data) ? $data['keywords'] : []);
 
-        $this->require = (array_key_exists('require', $config) ? $config['require'] : []);
-        $this->requireDev = (array_key_exists('require-dev', $config) ? $config['require-dev'] : []);
+        // Recursive data
+        $this->source = (array_key_exists('source', $data) ? new Source($data['source']) : new Source());
+        $this->dist = (array_key_exists('dist', $data) ? new Dist($data['dist']) : new Dist());
 
-        $this->license = (array_key_exists('license', $config) ? $config['license'] : ['']);
-        $this->license = (is_array($this->license) ? $this->license[0] : $this->license);
-    }
+        // Mapped data
+        $this->require = (array_key_exists('require', $data) ? new PackageMap($data['require']) : new PackageMap());
+        $this->requireDev = (array_key_exists('require-dev', $data) ? new PackageMap($data['require-dev']) : new PackageMap());
 
-    public function getName() : string
-    {
-        return $this->name;
-    }
+        // Special cases
+        if (array_key_exists('license', $data)) {
+            $license = $data['license'];
 
-    public function getVersion() : string
-    {
-        return $this->version;
-    }
+            if (is_string($license)) {
+                $license = [$license];
+            }
 
-    public function getType() : string
-    {
-        return $this->type;
-    }
+            $this->license = $license;
+        } else {
+            $this->license = [];
+        }
 
-    public function getAuthors() : array
-    {
-        return $this->authors;
-    }
-
-    public function getDescription() : string
-    {
-        return $this->description;
-    }
-
-    public function getHomepage() : string
-    {
-        return $this->homepage;
-    }
-
-    public function getKeywords() : array
-    {
-        return $this->keywords;
-    }
-
-    public function getTime() : string
-    {
-        return $this->time;
-    }
-
-    public function getExtra() : array
-    {
-        return $this->extra;
-    }
-
-    public function getSource() : Source
-    {
-        return $this->source;
-    }
-
-    public function getDist() : Dist
-    {
-        return $this->dist;
-    }
-
-    public function getRequire() : array
-    {
-        return $this->require;
-    }
-
-    public function getRequireDev() : array
-    {
-        return $this->requireDev;
-    }
-
-    public function getLicense() : string
-    {
-        return $this->license;
+        $this->authors = [];
+        if (array_key_exists('authors', $data)) {
+            foreach ($data['authors'] as $author) {
+                $this->authors[] = new Author($author);
+            }
+        }
     }
 }

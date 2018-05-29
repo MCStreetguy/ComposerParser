@@ -2,40 +2,31 @@
 
 namespace MCStreetguy\ComposerLock;
 
-class Dist
+class Dist extends Source
 {
-    protected $type;
-
-    protected $url;
-
-    protected $reference;
-
+    /**
+     * @var string
+     */
     protected $shasum;
 
-    public function __construct(array $options)
+    /**
+     * Parses the given data and constructs a new instance from it.
+     *
+     * @param array $data The composer lockfile partial data
+     */
+    public function __construct(array $data = [])
     {
-        $this->type = (array_key_exists('type', $options) ? $options['type'] : '');
-        $this->url = (array_key_exists('url', $options) ? $options['url'] : '');
-        $this->reference = (array_key_exists('reference', $options) ? $options['reference'] : '');
-        $this->shasum = (array_key_exists('shasum', $options) ? $options['shasum'] : '');
+        $this->shasum = (array_key_exists('shasum', $data) ? $data['shasum'] : '');
+
+        parent::__construct($data);
     }
 
-    public function getType() : string
-    {
-        return $this->type;
-    }
-
-    public function getUrl() : string
-    {
-        return $this->url;
-    }
-
-    public function getReference() : string
-    {
-        return $this->reference;
-    }
-
-    public function getShaSum() : string
+    /**
+     * Get the value of shasum
+     *
+     * @return  string
+     */
+    public function getShasum()
     {
         return $this->shasum;
     }

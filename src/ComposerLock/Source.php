@@ -4,30 +4,59 @@ namespace MCStreetguy\ComposerLock;
 
 class Source
 {
+    /**
+     * @var string
+     */
     protected $type;
 
+    /**
+     * @var string
+     */
     protected $url;
 
+    /**
+     * @var string
+     */
     protected $reference;
 
-    public function __construct(array $options)
+    /**
+     * Parses the given data and constructs a new instance from it.
+     *
+     * @param array $data The composer lockfile partial data
+     */
+    public function __construct(array $data = [])
     {
-        $this->type = (array_key_exists('type', $options) ? $options['type'] : '');
-        $this->url = (array_key_exists('url', $options) ? $options['url'] : '');
-        $this->reference = (array_key_exists('reference', $options) ? $options['reference'] : '');
+        $this->type = (array_key_exists('type', $data) ? $data['type'] : '');
+        $this->url = (array_key_exists('url', $data) ? $data['url'] : '');
+        $this->reference = (array_key_exists('reference', $data) ? $data['reference'] : '');
     }
 
-    public function getType() : string
+    /**
+     * Get the value of type
+     *
+     * @return  string
+     */
+    public function getType()
     {
         return $this->type;
     }
 
-    public function getUrl() : string
+    /**
+     * Get the value of url
+     *
+     * @return  string
+     */
+    public function getUrl()
     {
         return $this->url;
     }
 
-    public function getReference() : string
+    /**
+     * Get the value of reference
+     *
+     * @return  string
+     */
+    public function getReference()
     {
         return $this->reference;
     }

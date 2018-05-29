@@ -181,7 +181,7 @@ class ComposerJson
      *
      * @param array $data The data of the composer.json file
      */
-    public function __construct(array $data)
+    public function __construct(array $data = [])
     {
         // String data
         $this->name =               (array_key_exists('name', $data) ? $data['name'] : '');
