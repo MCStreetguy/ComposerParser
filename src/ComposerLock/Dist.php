@@ -1,6 +1,6 @@
 <?php
 
-namespace MCStreetguy\ComposerLockParser;
+namespace MCStreetguy\ComposerLock;
 
 class Dist
 {

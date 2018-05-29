@@ -15,7 +15,5 @@
             "MCStreetguy\\": "src/"
         }
     },
-    "require": {
-        "kint-php/kint": "^2.2"
-    }
+    "require": {}
 }

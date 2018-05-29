@@ -1,25 +1,25 @@
 <?php
 
-namespace MCStreetguy\ComposerLockParser;
+namespace MCStreetguy\ComposerLock;
 
 class Package
 {
     protected $name;
-    
+
     protected $version;
-    
+
     protected $type;
-    
+
     protected $authors;
-    
+
     protected $description;
-    
+
     protected $homepage;
-    
+
     protected $keywords;
-    
+
     protected $time;
-    
+
     protected $extra;
 
     /**

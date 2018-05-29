@@ -4,7 +4,7 @@ namespace MCStreetguy;
 
 use MCStreetguy\ComposerLockParser\Package;
 
-class ComposerLockParser
+class ComposerLock
 {
     /**
      * The lockfile contents.
@@ -15,12 +15,11 @@ class ComposerLockParser
     public function __construct()
     {
         $this->lock = [];
-    }
 
-    public function parse(string $path)
-    {
-        if (!\is_file($path) || !\is_readable($path) || !preg_match('/composer\.lock$/', $path)) {
-            throw new InvalidArgumentException("Could not retrieve lockfile at path '$path'!", 1527460933);
+        if (!\is_file($path) || !\is_readable($path)) {
+        }
+
+        if (!preg_match('/composer\.lock$/', $path)) {
         }
 
         $contents = file_get_contents($path);
