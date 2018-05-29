@@ -1,8 +1,8 @@
 <?php
 
-namespace MCStreetguy\ComposerJson;
+namespace MCStreetguy\ComposerParser\Json;
 
-use MCStreetguy\Helper\PropertyHelper;
+use MCStreetguy\Composer\Service\PropertyHelper;
 
 /**
  * This class represents the "config" section in the composer.json schema.

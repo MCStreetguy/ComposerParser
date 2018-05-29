@@ -2,8 +2,8 @@
 
 namespace MCStreetguy;
 
-use MCStreetguy\ComposerJson;
-use MCStreetguy\ComposerLock;
+use MCStreetguy\ComposerParser\Json;
+use MCStreetguy\ComposerParser\Lockfile;
 
 abstract class ComposerFactory
 {

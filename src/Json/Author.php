@@ -1,6 +1,6 @@
 <?php
 
-namespace MCStreetguy\ComposerJson;
+namespace MCStreetguy\ComposerParser\Json;
 
 /**
  * This class represents an entry from the "authors" section in the composer.json schema.

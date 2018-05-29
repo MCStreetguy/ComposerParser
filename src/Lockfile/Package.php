@@ -1,11 +1,11 @@
 <?php
 
-namespace MCStreetguy\ComposerLock;
+namespace MCStreetguy\ComposerParser\Lockfile;
 
-use MCStreetguy\ComposerJson\Autoload;
-use MCStreetguy\ComposerJson\Author;
+use MCStreetguy\ComposerParser\Json\Autoload;
+use MCStreetguy\ComposerParser\Json\Author;
 
-use MCStreetguy\ComposerJson\Service\PackageMap;
+use MCStreetguy\ComposerParser\Service\PackageMap;
 
 class Package
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace MCStreetguy\ComposerJson\Archive;
+namespace MCStreetguy\ComposerParser\Json\Archive;
 
 /**
  * This class represents the "autoload" section in the composer.json schema.

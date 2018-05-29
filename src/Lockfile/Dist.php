@@ -1,6 +1,6 @@
 <?php
 
-namespace MCStreetguy\ComposerLock;
+namespace MCStreetguy\ComposerParser\Lockfile;
 
 class Dist extends Source
 {

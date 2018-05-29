@@ -1,8 +1,8 @@
 <?php
 
-namespace MCStreetguy\ComposerJson;
+namespace MCStreetguy\ComposerParser\Json;
 
-use MCStreetguy\ComposerJson;
+use MCStreetguy\ComposerParser\Json;
 
 /**
  * This class represents an entry from the "repositories" section in the composer.json schema.

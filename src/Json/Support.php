@@ -1,6 +1,6 @@
 <?php
 
-namespace MCStreetguy\ComposerJson;
+namespace MCStreetguy\ComposerParser\Json;
 
 /**
  * This class represents the "support" section from the composer.json schema.

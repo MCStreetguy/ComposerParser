@@ -2,15 +2,15 @@
 
 namespace MCStreetguy;
 
-use MCStreetguy\ComposerJson\Author;
-use MCStreetguy\ComposerJson\Support;
-use MCStreetguy\ComposerJson\Archive;
-use MCStreetguy\ComposerJson\Autoload;
-use MCStreetguy\ComposerJson\Config;
-use MCStreetguy\ComposerJson\Repository;
-use MCStreetguy\ComposerJson\Scripts;
+use MCStreetguy\ComposerParser\Json\Author;
+use MCStreetguy\ComposerParser\Json\Support;
+use MCStreetguy\ComposerParser\Json\Archive;
+use MCStreetguy\ComposerParser\Json\Autoload;
+use MCStreetguy\ComposerParser\Json\Config;
+use MCStreetguy\ComposerParser\Json\Repository;
+use MCStreetguy\ComposerParser\Json\Scripts;
 
-use MCStreetguy\ComposerJson\Service\PackageMap;
+use MCStreetguy\ComposerParser\Service\PackageMap;
 
 /**
  * This class represents the data of an composer.json file the oop way.
