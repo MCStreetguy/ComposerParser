@@ -11,7 +11,7 @@ use MCStreetguy\ComposerParser\LockfileParser\Package;
  * @author Maximilian Schmidt <maximilianschmidt404@gmail.com>
  * @license MIT
  */
-class ComposerLock
+class Lockfile
 {
     /**
      * @var string
