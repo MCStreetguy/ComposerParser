@@ -1,5 +1,5 @@
 {
-    "name": "mcstreetguy/composer-lock-parser",
+    "name": "mcstreetguy/composer-parser",
     "description": "A composer lockfile parser.",
     "type": "library",
     "license": "MIT",

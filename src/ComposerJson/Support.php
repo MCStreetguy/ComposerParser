@@ -2,6 +2,13 @@
 
 namespace MCStreetguy\ComposerJson;
 
+/**
+ * This class represents the "support" section from the composer.json schema.
+ *
+ * @see https://getcomposer.org/doc/04-schema.md#support
+ * @author Maximilian Schmidt <maximilianschmidt404@gmail.com>
+ * @license MIT
+ */
 class Support
 {
     /**
@@ -49,7 +56,7 @@ class Support
      *
      * @param array $data The composer.json partial data
      */
-    public function __construct(array $data)
+    public function __construct(array $data = [])
     {
         $this->email = (array_key_exists('email', $data) ? $data['email'] : '');
         $this->issues = (array_key_exists('issues', $data) ? $data['issues'] : '');
@@ -61,41 +68,73 @@ class Support
         $this->rss = (array_key_exists('rss', $data) ? $data['rss'] : '');
     }
 
+    /**
+     * Gets the email address.
+     * @return string
+     */
     public function getEmail() : string
     {
         return $this->email;
     }
 
+    /**
+     * Gets the issue page url.
+     * @return string
+     */
     public function getIssues() : string
     {
         return $this->issues;
     }
 
+    /**
+     * Gets the forum url.
+     * @return string
+     */
     public function getForum() : string
     {
         return $this->forum;
     }
 
+    /**
+     * Gets the wiki url.
+     * @return string
+     */
     public function getWiki() : string
     {
         return $this->wiki;
     }
 
+    /**
+     * Gets the irc chat address.
+     * @return string
+     */
     public function getIrc() : string
     {
         return $this->irc;
     }
 
+    /**
+     * Gets the code source url.
+     * @return string
+     */
     public function getSource() : string
     {
         return $this->source;
     }
 
+    /**
+     * Gets the documentation url.
+     * @return string
+     */
     public function getDocs() : string
     {
         return $this->docs;
     }
 
+    /**
+     * Gets the rss feed address.
+     * @return string
+     */
     public function getRss() : string
     {
         return $this->rss;
