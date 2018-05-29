@@ -5,7 +5,7 @@ namespace MCStreetguy;
 use MCStreetguy\ComposerParser\Json;
 use MCStreetguy\ComposerParser\Lockfile;
 
-abstract class ComposerFactory
+abstract class Factory
 {
     /**
      * Reads the given file and automatically parses it to a ComposerJson or ComposerLock instance.
