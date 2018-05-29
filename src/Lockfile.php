@@ -1,6 +1,6 @@
 <?php
 
-namespace MCStreetguy;
+namespace MCStreetguy\ComposerParser;
 
 use MCStreetguy\ComposerParser\LockfileParser\Package;
 
