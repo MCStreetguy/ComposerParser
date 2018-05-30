@@ -8,7 +8,7 @@ use MCStreetguy\ComposerParser\Lockfile;
 abstract class Factory
 {
     /**
-     * Reads the given file and automatically parses it to a ComposerJson or ComposerLock instance.
+     * Analyses the given file and automatically parses it to a ComposerJson or ComposerLock instance.
      *
      * @param string $path The file to parse
      * @return ComposerJson|ComposerLock
@@ -24,21 +24,42 @@ abstract class Factory
         }
     }
 
+    /**
+     * Parses the given file into a ComposrJson instance.
+     *
+     * @param string $path The composer.json path
+     * @return ComposerJson
+     * @throws InvalidArgumentException
+     */
     public static function parseComposerJson(string $path) : ComposerJson
     {
-        $content = self::readFile($path);
+        $content = self::readJsonFile($path);
 
         return new ComposerJson($content);
     }
 
+    /**
+     * Parses the given file into a ComposerLock instance.
+     *
+     * @param string $path The composer.lock path
+     * @return ComposerLock
+     * @throws InvalidArgumentException
+     */
     public static function parseComposerLock(string $path) : ComposerLock
     {
-        $content = self::readFile($path);
+        $content = self::readJsonFile($path);
 
         return new ComposerLock($content);
     }
 
-    protected static function readFile(string $path) : string
+    /**
+     * Reads and decodes the give json file.
+     *
+     * @param string $path The file path to read
+     * @return array The parsed data
+     * @throws InvalidArgumentException
+     */
+    protected static function readJsonFile(string $path) : array
     {
         if (!\is_file($path) || !\is_readable($path)) {
             throw new \InvalidArgumentException("File at path '$path' does not exist or is not readable!", 1527613092);
