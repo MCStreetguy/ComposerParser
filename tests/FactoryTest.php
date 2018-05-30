@@ -14,9 +14,9 @@ class FactoryTest extends TestCase
         $this->assertInstanceOf(ComposerJson::class, $instance);
     }
 
-    public function testCanParseComposerLock()
+    public function testCanParseLockfile()
     {
-        $instance = Factory::parseComposerLock(__DIR__ . '/../composer.lock');
+        $instance = Factory::parseLockfile(__DIR__ . '/../composer.lock');
 
         $this->assertInstanceOf(Lockfile::class, $instance);
     }
@@ -34,7 +34,7 @@ class FactoryTest extends TestCase
 
     public function testCantParseInvalid()
     {
-        $this->excpectException(InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         Factory::parse(__DIR__ . '/bootstrap.php');
     }
