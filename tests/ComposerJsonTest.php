@@ -78,8 +78,8 @@ class ComposerJsonTest extends TestCase
         $this->assertInstanceOf(PackageMap::class, $requireDev);
         $this->assertCount(1, $requireDev);
         $this->assertContains([
-            "name" => "phpunit/phpunit",
-            "version" => "^7.1"
+            "name" => "mcstreetguy/tempearly",
+            "version" => "^0.4.2"
         ], $requireDev);
     }
 }
