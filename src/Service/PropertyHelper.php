@@ -1,6 +1,6 @@
 <?php
 
-namespace MCStreetguy\Composer\Service;
+namespace MCStreetguy\ComposerParser\Service;
 
 /**
  * A helper class for property <-> json key conversion.
