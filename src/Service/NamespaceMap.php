@@ -107,9 +107,11 @@ class NamespaceMap implements \Iterator, \ArrayAccess
      * Sets a value on the given offset.
      *
      * @see http://php.net/manual/de/arrayaccess.offsetset.php
+     * @param int $offset The desired offset
+     * @param mixed $value The value to store
      * @return void
      */
-    public function offsetSet(int $offset, mixed $value)
+    public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
             $this->list[] = $value;
@@ -122,9 +124,10 @@ class NamespaceMap implements \Iterator, \ArrayAccess
      * Checks if the given offset exists.
      *
      * @see http://php.net/manual/de/arrayaccess.offsetexists.php
+     * @param int $offset The desired offset
      * @return bool
      */
-    public function offsetExists(int $offset)
+    public function offsetExists($offset)
     {
         return isset($this->list[$offset]);
     }
@@ -133,9 +136,10 @@ class NamespaceMap implements \Iterator, \ArrayAccess
      * Unsets the given offset.
      *
      * @see http://php.net/manual/de/arrayaccess.offsetunset.php
+     * @param int $offset The desired offset
      * @return void
      */
-    public function offsetUnset(int $offset)
+    public function offsetUnset($offset)
     {
         unset($this->list[$offset]);
     }
@@ -144,9 +148,10 @@ class NamespaceMap implements \Iterator, \ArrayAccess
      * Returns the value for the given offset.
      *
      * @see http://php.net/manual/de/arrayaccess.offsetget.php
+     * @param int $offset The desired offset
      * @return mixed
      */
-    public function offsetGet(int $offset)
+    public function offsetGet($offset)
     {
         return $this->offsetExists($offset) ? $this->list[$offset] : null;
     }
