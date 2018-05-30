@@ -2,7 +2,7 @@
 
 namespace MCStreetguy\ComposerParser;
 
-use MCStreetguy\ComposerParser\LockfileParser\Package;
+use MCStreetguy\ComposerParser\Lockfile\Package;
 
 /**
  * This class represents the data of an composer lockfile the oop way.

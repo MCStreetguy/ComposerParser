@@ -2,7 +2,7 @@
 
 namespace MCStreetguy\ComposerParser\Json;
 
-use MCStreetguy\Composer\Service\PropertyHelper;
+use MCStreetguy\ComposerParser\Service\PropertyHelper;
 
 /**
  * This class represents the "config" section in the composer.json schema.
