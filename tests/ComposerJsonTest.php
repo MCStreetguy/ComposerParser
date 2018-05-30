@@ -30,7 +30,7 @@ class ComposerJsonTest extends TestCase
         $this->assertObjectHasAttribute('provide', $composerJson);
         $this->assertObjectHasAttribute('suggest', $composerJson);
         $this->assertObjectHasAttribute('autoload', $composerJson);
-        $this->assertObjectHasAttribtue('autoloadDev', $composerJson);
+        $this->assertObjectHasAttribute('autoloadDev', $composerJson);
         $this->assertObjectHasAttribute('includePath', $composerJson);
         $this->assertObjectHasAttribute('targetDir', $composerJson);
         $this->assertObjectHasAttribute('minimumStability', $composerJson);

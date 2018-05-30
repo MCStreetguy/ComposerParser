@@ -5,17 +5,17 @@ namespace MCStreetguy\ComposerParser;
 abstract class Factory
 {
     /**
-     * Analyses the given file and automatically parses it to a ComposerJson or ComposerLock instance.
+     * Analyses the given file and automatically parses it to a ComposerJson or Lockfile instance.
      *
      * @param string $path The file to parse
-     * @return ComposerJson|ComposerLock
+     * @return ComposerJson|Lockfile
      */
     public static function parse(string $path)
     {
         if (preg_match('/composer\.json$/', $path)) {
             return self::parseComposerJson($path);
         } elseif (preg_match('/composer\.lock$/', $path)) {
-            return self::parseComposerLock($path);
+            return self::parseLockfile($path);
         } else {
             throw new \InvalidArgumentException("File at path '$path' is neither a composer.lock or a composer.json file!", 1527613100);
         }
@@ -36,17 +36,17 @@ abstract class Factory
     }
 
     /**
-     * Parses the given file into a ComposerLock instance.
+     * Parses the given file into a Lockfile instance.
      *
      * @param string $path The composer.lock path
-     * @return ComposerLock
+     * @return Lockfile
      * @throws InvalidArgumentException
      */
-    public static function parseComposerLock(string $path) : ComposerLock
+    public static function parseLockfile(string $path) : Lockfile
     {
         $content = self::readJsonFile($path);
 
-        return new ComposerLock($content);
+        return new Lockfile($content);
     }
 
     /**
