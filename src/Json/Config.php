@@ -1,6 +1,6 @@
 <?php
 
-namespace MCStreetguy\ComposerParser\Json\Config;
+namespace MCStreetguy\ComposerParser\Json;
 
 use MCStreetguy\Composer\Service\PropertyHelper;
 
