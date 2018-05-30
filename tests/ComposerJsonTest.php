@@ -2,9 +2,12 @@
 use PHPUnit\Framework\TestCase;
 
 use MCStreetguy\ComposerParser\ComposerJson;
+use MCStreetguy\ComposerParser\Json\Autoload;
+use MCStreetguy\ComposerParser\Service\PackageMap;
 
 class ComposerJsonTest extends TestCase
 {
+    /** */
     public function testCanConstruct()
     {
         $content = json_decode(file_get_contents(__DIR__ . '/../composer.json'), true);
@@ -43,5 +46,40 @@ class ComposerJsonTest extends TestCase
         $this->assertObjectHasAttribute('archive', $composerJson);
         $this->assertObjectHasAttribute('abandoned', $composerJson);
         $this->assertObjectHasAttribute('nonFeatureBranches', $composerJson);
+
+        return $composerJson;
+    }
+
+    /**
+     * @depends testCanConstruct
+     */
+    public function testCanGetValidData(ComposerJson $composerJson)
+    {
+        $this->assertEquals('mcstreetguy/composer-parser', $composerJson->getName());
+        $this->assertEquals('A composer.json and lockfile parser.', $composerJson->getDescription());
+        $this->assertEquals('library', $composerJson->getType());
+        $this->assertEquals('https://github.com/MCStreetguy/ComposerLockParser', $composerJson->getHomepage());
+
+        $license = $composerJson->getLicense();
+        $this->assertInternalType('array', $license);
+        $this->assertContains('MIT', $license);
+
+        $authors = $composerJson->getAuthors();
+        $this->assertInternalType('array', $authors);
+        $this->assertCount(1, $authors);
+        
+        $this->assertInstanceOf(Autoload::class, $composerJson->getAutoload());
+
+        $require = $composerJson->getRequire();
+        $this->assertInstanceOf(PackageMap::class, $require);
+        $this->assertCount(0, $require);
+
+        $requireDev = $composerJson->getRequireDev();
+        $this->assertInstanceOf(PackageMap::class, $requireDev);
+        $this->assertCount(1, $requireDev);
+        $this->assertContains([
+            "name" => "phpunit/phpunit",
+            "version" => "^7.1"
+        ], $requireDev);
     }
 }
