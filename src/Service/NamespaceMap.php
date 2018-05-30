@@ -65,7 +65,7 @@ class NamespaceMap implements \Iterator, \ArrayAccess
      * @see http://php.net/manual/de/iterator.current.php
      * @return array
      */
-    public function current() : array
+    public function current()
     {
         return $this->list[$this->position];
     }
@@ -76,7 +76,7 @@ class NamespaceMap implements \Iterator, \ArrayAccess
      * @see http://php.net/manual/de/iterator.key.php
      * @return int
      */
-    public function key() : int
+    public function key()
     {
         return $this->position;
     }
@@ -98,7 +98,7 @@ class NamespaceMap implements \Iterator, \ArrayAccess
      * @see http://php.net/manual/de/iterator.valid.php
      * @return bool
      */
-    public function valid() : bool
+    public function valid()
     {
         return $this->offsetExists($this->position);
     }
@@ -124,7 +124,7 @@ class NamespaceMap implements \Iterator, \ArrayAccess
      * @see http://php.net/manual/de/arrayaccess.offsetexists.php
      * @return bool
      */
-    public function offsetExists(int $offset) : bool
+    public function offsetExists(int $offset)
     {
         return isset($this->list[$offset]);
     }
