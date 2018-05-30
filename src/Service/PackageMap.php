@@ -9,7 +9,7 @@ namespace MCStreetguy\ComposerParser\Service;
  * @author Maximilian Schmidt <maximilianschmidt404@gmail.com>
  * @license MIT
  */
-class PackageMap implements \Iterator
+class PackageMap implements \Iterator, \ArrayAccess
 {
     /**
      * @var array
@@ -99,7 +99,55 @@ class PackageMap implements \Iterator
      */
     public function valid() : bool
     {
-        return null !== $this->current();
+        return $this->offsetExists($this->position);
+    }
+
+    /**
+     * Sets a value on the given offset.
+     *
+     * @see http://php.net/manual/de/arrayaccess.offsetset.php
+     * @return void
+     */
+    public function offsetSet(int $offset, mixed $value)
+    {
+        if (is_null($offset)) {
+            $this->list[] = $value;
+        } else {
+            $this->list[$offset] = $value;
+        }
+    }
+
+    /**
+     * Checks if the given offset exists.
+     *
+     * @see http://php.net/manual/de/arrayaccess.offsetexists.php
+     * @return bool
+     */
+    public function offsetExists(int $offset) : bool
+    {
+        return isset($this->list[$offset]);
+    }
+
+    /**
+     * Unsets the given offset.
+     *
+     * @see http://php.net/manual/de/arrayaccess.offsetunset.php
+     * @return void
+     */
+    public function offsetUnset(int $offset)
+    {
+        unset($this->list[$offset]);
+    }
+
+    /**
+     * Returns the value for the given offset.
+     *
+     * @see http://php.net/manual/de/arrayaccess.offsetget.php
+     * @return mixed
+     */
+    public function offsetGet(int $offset)
+    {
+        return $this->offsetExists($offset) ? $this->list[$offset] : null;
     }
 
     /**
