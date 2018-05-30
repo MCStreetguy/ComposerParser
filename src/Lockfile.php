@@ -3,6 +3,7 @@
 namespace MCStreetguy\ComposerParser;
 
 use MCStreetguy\ComposerParser\Lockfile\Package;
+use MCStreetguy\ComposerParser\Service\PackageMap;
 
 /**
  * This class represents the data of an composer lockfile the oop way.
