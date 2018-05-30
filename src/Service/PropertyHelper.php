@@ -18,7 +18,7 @@ abstract class PropertyHelper
      */
     public static function convertPropertyToJsonKey(string $property) : string
     {
-        $key = preg_replace('/(?<=\w)[A-Z]/g', "-$1", $property);
+        $key = preg_replace('/(?<=\w)[A-Z]/', "-$1", $property);
         $key = strtolower($key);
 
         return $key;
@@ -32,7 +32,7 @@ abstract class PropertyHelper
      */
     public static function convertJsonKeyToProperty(string $key) : string
     {
-        $property = preg_replace_callback('/(?<=\w)-([a-z])/g', function (array $matches) {
+        $property = preg_replace_callback('/(?<=\w)-([a-z])/', function (array $matches) {
             return \strtoupper($matches[1]);
         }, $key);
         
