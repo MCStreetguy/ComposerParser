@@ -10,7 +10,7 @@ namespace MCStreetguy\ComposerParser\Service;
  * @author Maximilian Schmidt <maximilianschmidt404@gmail.com>
  * @license MIT
  */
-class NamespaceMap implements Iterator
+class NamespaceMap implements \Iterator
 {
     /**
      * @var array
