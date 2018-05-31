@@ -13,7 +13,7 @@ test:
   php_code_sniffer:
     path: "src/"
     standard: "PSR1,PSR2"
-    allowed_warnings: 10
+    allowed_warnings: 20
   php_docblock_checker:
     path: "src/"
   php_cpd:
@@ -27,7 +27,8 @@ test:
       - "design"
       # - "naming"
       - "unusedcode"
-    zero_config: true
+    # zero_config: true
+    allowed_warnings: 10
   php_unit:
     config: "phpunit.xml"
     directory: "tests/"
