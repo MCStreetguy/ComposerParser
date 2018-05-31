@@ -80,6 +80,6 @@ class ComposerJsonTest extends TestCase
         $this->assertContains([
             "name" => "mcstreetguy/tempearly",
             "version" => "^0.4.2"
-        ], $requireDev);
+        ], $requireDev->getPackages());
     }
 }
