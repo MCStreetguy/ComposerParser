@@ -32,10 +32,11 @@ class FactoryTest extends TestCase
         $this->assertInstanceOf(Lockfile::class, $instance);
     }
 
+    /**
+     * @expectedException InvalidArgumentException
+     */
     public function testCantParseInvalid()
     {
-        $this->expectException(InvalidArgumentException::class);
-
         Factory::parse(__DIR__ . '/bootstrap.php');
     }
 }
