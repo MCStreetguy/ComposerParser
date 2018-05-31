@@ -34,6 +34,11 @@ class Repository extends AbstractClass
      */
     protected $package;
 
+    /**
+     * Parses the given data and constructs a new instance from it.
+     *
+     * @param array $data The composer.json partial data
+     */
     public function __construct(array $data = [])
     {
         $this->type = (array_key_exists('type', $data) ? $data['type'] : '');

@@ -90,6 +90,10 @@ class Autoload extends AbstractClass
         return $this->files;
     }
 
+    /**
+     * Gets the excluded files from the classmap.
+     * @return array
+     */
     public function getExcludeFromClassmap() : array
     {
         return $this->excludeFromClassmap;

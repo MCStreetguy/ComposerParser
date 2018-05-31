@@ -4,6 +4,10 @@ namespace MCStreetguy\ComposerParser\Lockfile;
 
 use MCStreetguy\ComposerParser\Service\AbstractClass;
 
+/**
+ * @author Maximilian Schmidt <maximilianschmidt404@gmail.com>
+ * @license MIT
+ */
 class Source extends AbstractClass
 {
     /**

@@ -2,6 +2,10 @@
 
 namespace MCStreetguy\ComposerParser\Lockfile;
 
+/**
+ * @author Maximilian Schmidt <maximilianschmidt404@gmail.com>
+ * @license MIT
+ */
 class Dist extends Source
 {
     /**

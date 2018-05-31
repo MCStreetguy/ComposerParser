@@ -2,6 +2,12 @@
 
 namespace MCStreetguy\ComposerParser;
 
+/**
+ * A factory class for instantiation of the ComposerJson and Lockfile classes.
+ *
+ * @author Maximilian Schmidt <maximilianschmidt404@gmail.com>
+ * @license MIT
+ */
 abstract class Factory
 {
     /**

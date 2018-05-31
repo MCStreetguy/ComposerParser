@@ -8,6 +8,12 @@ use MCStreetguy\ComposerParser\Json\Author;
 use MCStreetguy\ComposerParser\Service\PackageMap;
 use MCStreetguy\ComposerParser\Service\AbstractClass;
 
+/**
+ * This class represents an entry in the "packages" section in the composer.lock schema.
+ *
+ * @author Maximilian Schmidt <maximilianschmidt404@gmail.com>
+ * @license MIT
+ */
 class Package extends AbstractClass
 {
     /**
