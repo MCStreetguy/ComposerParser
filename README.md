@@ -152,7 +152,7 @@ $map = $require->getData();
 
 #### NamespaceMap
 The NamespaceMap is used for the fields `autoload.psr-0` and `autoload.psr-4`.
-In fact this class is identical to the [PackageMap](#package-map). The only difference are the map keys:
+In fact this class is identical to the [PackageMap](#packagemap). The only difference are the map keys:
 
 ``` json
 {
