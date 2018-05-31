@@ -2,7 +2,8 @@
 
 namespace MCStreetguy\ComposerParser\Json;
 
-use MCStreetguy\ComposerParser\Json;
+use MCStreetguy\ComposerParser\ComposerJson;
+use MCStreetguy\ComposerParser\Service\AbstractClass;
 
 /**
  * This class represents an entry from the "repositories" section in the composer.json schema.
@@ -11,7 +12,7 @@ use MCStreetguy\ComposerParser\Json;
  * @author Maximilian Schmidt <maximilianschmidt404@gmail.com>
  * @license MIT
  */
-class Repository
+class Repository extends AbstractClass
 {
     /**
      * @var string

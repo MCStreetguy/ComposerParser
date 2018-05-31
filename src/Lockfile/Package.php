@@ -6,8 +6,9 @@ use MCStreetguy\ComposerParser\Json\Autoload;
 use MCStreetguy\ComposerParser\Json\Author;
 
 use MCStreetguy\ComposerParser\Service\PackageMap;
+use MCStreetguy\ComposerParser\Service\AbstractClass;
 
-class Package
+class Package extends AbstractClass
 {
     /**
      * @var string

@@ -6,7 +6,7 @@ namespace MCStreetguy\ComposerParser\Service;
  * @author Maximilian Schmidt <maximilianschmidt404@gmail.com>
  * @license MIT
  */
-abstract class AbstractMap implements \Iterator, \ArrayAccess
+abstract class AbstractMap extends IsThisEmpty implements \Iterator, \ArrayAccess
 {
     /**
      * @var array

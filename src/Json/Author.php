@@ -2,6 +2,8 @@
 
 namespace MCStreetguy\ComposerParser\Json;
 
+use MCStreetguy\ComposerParser\Service\AbstractClass;
+
 /**
  * This class represents an entry from the "authors" section in the composer.json schema.
  *
@@ -9,7 +11,7 @@ namespace MCStreetguy\ComposerParser\Json;
  * @author Maximilian Schmidt <maximilianschmidt404@gmail.com>
  * @license MIT
  */
-class Author
+class Author extends AbstractClass
 {
     /**
      * @var string

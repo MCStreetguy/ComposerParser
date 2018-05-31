@@ -2,7 +2,9 @@
 
 namespace MCStreetguy\ComposerParser\Lockfile;
 
-class Source
+use MCStreetguy\ComposerParser\Service\AbstractClass;
+
+class Source extends AbstractClass
 {
     /**
      * @var string

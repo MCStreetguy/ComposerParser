@@ -3,6 +3,7 @@
 namespace MCStreetguy\ComposerParser\Json;
 
 use MCStreetguy\ComposerParser\Service\NamespaceMap;
+use MCStreetguy\ComposerParser\Service\AbstractClass;
 
 /**
  * This class represents the "autoload" section in the composer.json schema.
@@ -11,7 +12,7 @@ use MCStreetguy\ComposerParser\Service\NamespaceMap;
  * @author Maximilian Schmidt <maximilianschmidt404@gmail.com>
  * @license MIT
  */
-class Autoload
+class Autoload extends AbstractClass
 {
     /**
      * @var NamespaceMap

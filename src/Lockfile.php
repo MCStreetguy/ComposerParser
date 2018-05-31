@@ -4,6 +4,7 @@ namespace MCStreetguy\ComposerParser;
 
 use MCStreetguy\ComposerParser\Lockfile\Package;
 use MCStreetguy\ComposerParser\Service\PackageMap;
+use MCStreetguy\ComposerParser\Service\AbstractClass;
 
 /**
  * This class represents the data of an composer lockfile the oop way.
@@ -12,7 +13,7 @@ use MCStreetguy\ComposerParser\Service\PackageMap;
  * @author Maximilian Schmidt <maximilianschmidt404@gmail.com>
  * @license MIT
  */
-class Lockfile
+class Lockfile extends AbstractClass
 {
     /**
      * @var string

@@ -9,6 +9,8 @@ abstract class Factory
      *
      * @param string $path The file to parse
      * @return ComposerJson|Lockfile
+     * @throws InvalidArgumentException
+     * @throws RuntimeException
      */
     public static function parse(string $path)
     {
@@ -27,6 +29,7 @@ abstract class Factory
      * @param string $path The composer.json path
      * @return ComposerJson
      * @throws InvalidArgumentException
+     * @throws RuntimeException
      */
     public static function parseComposerJson(string $path) : ComposerJson
     {
@@ -41,6 +44,7 @@ abstract class Factory
      * @param string $path The composer.lock path
      * @return Lockfile
      * @throws InvalidArgumentException
+     * @throws RuntimeException
      */
     public static function parseLockfile(string $path) : Lockfile
     {
@@ -55,6 +59,7 @@ abstract class Factory
      * @param string $path The file path to read
      * @return array The parsed data
      * @throws InvalidArgumentException
+     * @throws RuntimeException
      */
     protected static function readJsonFile(string $path) : array
     {
@@ -62,8 +67,13 @@ abstract class Factory
             throw new \InvalidArgumentException("File at path '$path' does not exist or is not readable!", 1527613092);
         }
 
-        $content = file_get_contents($path);
-        $object = json_decode($content, true);
-        return $object;
+        try {
+            $content = file_get_contents($path);
+            $object = json_decode($content, true);
+        } catch (Error $e) {
+            throw new \RuntimeException("Invalid JSON string! Could not parse file '$path'.", 1527763163);
+        } finally {
+            return $object;
+        }
     }
 }

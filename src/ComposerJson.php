@@ -11,6 +11,7 @@ use MCStreetguy\ComposerParser\Json\Repository;
 use MCStreetguy\ComposerParser\Json\Scripts;
 
 use MCStreetguy\ComposerParser\Service\PackageMap;
+use MCStreetguy\ComposerParser\Service\AbstractClass;
 
 /**
  * This class represents the data of an composer.json file the oop way.
@@ -21,7 +22,7 @@ use MCStreetguy\ComposerParser\Service\PackageMap;
  *
  * @SuppressWarnings("complexity")
  */
-class ComposerJson
+class ComposerJson extends AbstractClass
 {
     /**
      * @var string

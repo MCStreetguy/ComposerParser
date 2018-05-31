@@ -3,6 +3,7 @@
 namespace MCStreetguy\ComposerParser\Json;
 
 use MCStreetguy\ComposerParser\Service\PropertyHelper;
+use MCStreetguy\ComposerParser\Service\AbstractClass;
 
 /**
  * This class represents the "config" section in the composer.json schema.
@@ -13,7 +14,7 @@ use MCStreetguy\ComposerParser\Service\PropertyHelper;
  *
  * @SuppressWarnings("complexity")
  */
-class Config
+class Config extends AbstractClass
 {
     // TODO: Property documentations
     protected $processTimeout;

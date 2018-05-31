@@ -3,6 +3,7 @@
 namespace MCStreetguy\ComposerParser\Json;
 
 use MCStreetguy\ComposerParser\Service\PropertyHelper;
+use MCStreetguy\ComposerParser\Service\AbstractClass;
 
 /**
  * This class represents the "config" section in the composer.json schema.
@@ -11,7 +12,7 @@ use MCStreetguy\ComposerParser\Service\PropertyHelper;
  * @author Maximilian Schmidt <maximilianschmidt404@gmail.com>
  * @license MIT
  */
-class Scripts
+class Scripts extends AbstractClass
 {
     /**
      * @var array
