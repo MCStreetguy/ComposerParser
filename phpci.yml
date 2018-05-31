@@ -24,9 +24,8 @@ test:
     rules:
       - "cleancode"
       - "controversial"
-      - "codesize"
       - "design"
-      - "naming"
+      # - "naming"
       - "unusedcode"
     zero_config: true
   php_unit:
