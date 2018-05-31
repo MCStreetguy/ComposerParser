@@ -18,6 +18,8 @@ use MCStreetguy\ComposerParser\Service\PackageMap;
  * @see https://getcomposer.org/doc/04-schema.md
  * @author Maximilian Schmidt <maximilianschmidt404@gmail.com>
  * @license MIT
+ *
+ * @SuppressWarnings("complexity")
  */
 class ComposerJson
 {
@@ -180,6 +182,8 @@ class ComposerJson
      * Parses the given data and constructs a new instance from it.
      *
      * @param array $data The data of the composer.json file
+     *
+     * @SuppressWarnings("complexity")
      */
     public function __construct(array $data = [])
     {
@@ -222,16 +226,15 @@ class ComposerJson
         $this->suggest =            (array_key_exists('suggest', $data) ? new PackageMap($data['suggest']) : new PackageMap());
 
         // Special cases
+        $this->license = [];
         if (array_key_exists('license', $data)) {
             $license = $data['license'];
 
             if (is_string($license)) {
                 $license = [$license];
             }
-
+            
             $this->license = $license;
-        } else {
-            $this->license = [];
         }
 
         $this->authors = [];
@@ -474,7 +477,7 @@ class ComposerJson
      *
      * @return  bool
      */
-    public function getPreferStable()
+    public function isPreferringStable()
     {
         return $this->preferStable;
     }
@@ -544,7 +547,7 @@ class ComposerJson
      *
      * @return  bool
      */
-    public function getAbandoned()
+    public function isAbandoned()
     {
         return $this->abandoned;
     }

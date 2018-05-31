@@ -16,9 +16,9 @@ abstract class Factory
             return self::parseComposerJson($path);
         } elseif (preg_match('/composer\.lock$/', $path)) {
             return self::parseLockfile($path);
-        } else {
-            throw new \InvalidArgumentException("File at path '$path' is neither a composer.lock or a composer.json file!", 1527613100);
         }
+
+        throw new \InvalidArgumentException("File at path '$path' is neither a composer.lock or a composer.json file!", 1527613100);
     }
 
     /**

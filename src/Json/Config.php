@@ -10,9 +10,12 @@ use MCStreetguy\ComposerParser\Service\PropertyHelper;
  * @see https://getcomposer.org/doc/06-config.md
  * @author Maximilian Schmidt <maximilianschmidt404@gmail.com>
  * @license MIT
+ *
+ * @SuppressWarnings("complexity")
  */
 class Config
 {
+    // TODO: Property documentations
     protected $processTimeout;
     protected $useIncludePath;
     protected $preferredInstall;
