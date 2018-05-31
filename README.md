@@ -1,5 +1,5 @@
 # Composer Parser
-A parser library for composer.json and lockfiles.
+**A parser library for composer.json and lockfiles.**
 
 ## Installation
 
@@ -8,7 +8,7 @@ $ composer require mcstreetguy/composer-parser
 ```
 
 ## Instantiation
-I recommend using the provided magic factory method for parsing:
+I recommend using the provided magic Factory method for parsing:
 
 ``` php
 use MCStreetguy\ComposerParser\Factory as ComposerParser;
@@ -18,15 +18,15 @@ $lockfile = ComposerParser::parse('/path/to/composer.lock');
 ```
 
 Even if this is the easiest way to retrieve an instance, it may be that you
-for some reason cannot rely on these automations (e.g. if you got a differing filename),
-you can also call the parse methods directly:
+for some reason cannot rely on these automations (e.g. if you got a differing filename).
+In this case you can also call the parse methods directly:
 
 ``` php
 $composerJson = ComposerParser::parseComposerJson('/some/file');
 $lockfile = ComposerParser::parseLockfile('/another/file');
 ```
 
-Please note that ComposerParser will not complain about any missing fields, instead
+_Please note_ that ComposerParser will not complain about any missing fields, instead
 it fills all missing values with default ones to ensure integrity.    
 
 ### Exception Handling
@@ -44,7 +44,7 @@ try {
 
 ### Direct Instatiation
 If you somehow can not rely on the Factory, you can also instantiate the class directly.   
-This is however not recommended and may lead to unexpected behaviour.
+**This is however not recommended and may lead to unexpected behaviour.**
 
 ``` php
 use \MCStreetguy\ComposerParse\ComposerJson;
@@ -82,18 +82,18 @@ $license = $composerJson->getLicense();
 $version = $composerJson->getVersion();
 ```
 
-It's also possible to directly access properties. Please note that this is read-only!
+It's also possible to directly access properties. _Please note_ that this is read-only!
 
 ``` php
 $description = $composerJson->description;
 $require = $composerJson->require;
 ```
 
-You may also call `empty()` or `isset()` on the object properties.    
-To check if the whole object is empty (useful for nested classes) there is an `isEmpty()` method inherited:
+You may also call `empty()` or `isset()` on the class properties.    
+To check if the whole wrapper is empty (useful for nested classes) there is an `isEmpty()` method inherited:
 
 ``` php
-if ($composerJson->getConfig()->isEmpty()) {
+if ($composerJson->config->isEmpty()) {
     // Do something
 }
 ```
@@ -129,9 +129,11 @@ $require = [
 ]
 ```
 
-Additionally it implements the Iterator and ArrayAccess interfaces, thus you may directly access it's contents or put it in a loop:
+Additionally it implements the Iterator and ArrayAccess interfaces, thus you may directly access it's contents or put it in a foreach loop:
 
 ``` php
+$require = $composerJson->getRequire();
+
 $fooBar = $require[1];
 
 foreach ($require as $requirement) {
