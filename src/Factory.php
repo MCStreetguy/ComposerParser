@@ -8,8 +8,17 @@ namespace MCStreetguy\ComposerParser;
  * @author Maximilian Schmidt <maximilianschmidt404@gmail.com>
  * @license MIT
  */
-abstract class Factory
+class Factory
 {
+    public function __call(string $name, array $arguments)
+    {
+        if (\method_exists(self, $name)) {
+            return self::$name($arguments[0]);
+        }
+
+        throw new RuntimeException("Cannot call $name on ".get_class().", method does not exist!", 1527984626);
+    }
+
     /**
      * Analyses the given file and automatically parses it to a ComposerJson or Lockfile instance.
      *
