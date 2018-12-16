@@ -178,6 +178,11 @@ class ComposerJson extends AbstractClass
      * @var array
      */
     protected $nonFeatureBranches;
+    
+    /**
+     * @var array
+     */
+    protected $_data;
 
     /**
      * Parses the given data and constructs a new instance from it.
@@ -188,6 +193,8 @@ class ComposerJson extends AbstractClass
      */
     public function __construct(array $data = [])
     {
+        $this->_data = $data;
+        
         // String data
         $this->name =               (array_key_exists('name', $data) ? $data['name'] : '');
         $this->description =        (array_key_exists('description', $data) ? $data['description'] : '');
@@ -561,5 +568,15 @@ class ComposerJson extends AbstractClass
     public function getNonFeatureBranches()
     {
         return $this->nonFeatureBranches;
+    }
+    
+    /**
+     * Get the whole manifest file as array.
+     *
+     * @return array
+     */
+    public function toArray()
+    {
+        return $this->_data;
     }
 }
