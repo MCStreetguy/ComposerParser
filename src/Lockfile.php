@@ -99,6 +99,8 @@ class Lockfile extends AbstractClass
         $this->platform = (array_key_exists('platform', $data) ? new PackageMap($data['platform']) : new PackageMap);
         $this->platformDev = (array_key_exists('platform-dev', $data) ? new PackageMap($data['platform-dev']) : new PackageMap());
         $this->platformOverride = (array_key_exists('platform-override', $data) ? new PackageMap($data['platform-override']) : new PackageMap());
+        $this->packages = (array_key_exists('packages', $data) ? new PackageMap($data['packages']) : new PackageMap());
+        $this->packagesDev = (array_key_exists('packages-dev', $data) ? new PackageMap($data['packages-dev']) : new PackageMap());
     }
 
     /**
