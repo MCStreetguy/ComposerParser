@@ -2,6 +2,24 @@
 
 **A dependency-free parser library for composer.json and composer.lock files.**
 
+- [Composer Parser](#composer-parser)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Parsing](#parsing)
+      - [Exception Handling](#exception-handling)
+      - [Doing it the manual way](#doing-it-the-manual-way)
+        - [Sub-components](#sub-components)
+    - [Data Retrieval](#data-retrieval)
+      - [Special Classes](#special-classes)
+        - [PackageMap](#packagemap)
+        - [NamespaceMap](#namespacemap)
+    - [Global Configuration](#global-configuration)
+  - [Versioning](#versioning)
+  - [Testing](#testing)
+  - [Authors](#authors)
+    - [Acknowledgement](#acknowledgement)
+  - [License](#license)
+
 ## Installation
 
 ``` bash
