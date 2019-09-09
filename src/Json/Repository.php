@@ -30,6 +30,11 @@ class Repository extends AbstractClass
     protected $options;
 
     /**
+     * @var bool
+     */
+    protected $allowSslDowngrade;
+
+    /**
      * @var ComposerJson|null
      */
     protected $package;
@@ -44,6 +49,7 @@ class Repository extends AbstractClass
         $this->type = (array_key_exists('type', $data) ? $data['type'] : '');
         $this->url = (array_key_exists('url', $data) ? $data['url'] : '');
         $this->options = (array_key_exists('options', $data) ? $data['options'] : []);
+        $this->allowSslDowngrade = (array_key_exists('allow_ssl_downgrade', $data) ? $data['allow_ssl_downgrade'] : false);
 
         $this->package = (array_key_exists('package', $data) ? new ComposerJson($data['package']) : null);
     }
@@ -73,6 +79,16 @@ class Repository extends AbstractClass
     public function getOptions() : array
     {
         return $this->options;
+    }
+
+    /**
+     * Get if ssl may be downgraded for this repository.
+     * @see https://github.com/composer/composer/blob/0fe200d6d950b0774688713be3153bb410eb70b8/src/Composer/Repository/ComposerRepository.php#L87-L89
+     * @return bool
+     */
+    public function isSslDowngradeAllowed() : bool
+    {
+        return $this->allowSslDowngrade;
     }
 
     /**
