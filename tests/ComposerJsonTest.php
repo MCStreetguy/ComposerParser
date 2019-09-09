@@ -4,6 +4,7 @@ namespace MCStreetguy\ComposerParser\Tests;
 use MCStreetguy\ComposerParser\ComposerJson;
 use MCStreetguy\ComposerParser\Json\Autoload;
 use MCStreetguy\ComposerParser\Service\PackageMap;
+use MCStreetguy\ComposerParser\Json\Repository;
 use PHPUnit\Framework\TestCase;
 
 class ComposerJsonTest extends TestCase
@@ -70,6 +71,13 @@ class ComposerJsonTest extends TestCase
         $this->assertCount(1, $authors);
 
         $this->assertInstanceOf(Autoload::class, $composerJson->getAutoload());
+        $this->assertInstanceOf(Autoload::class, $composerJson->getAutoloadDev());
+
+        $repositories = $composerJson->getRepositories();
+        $this->assertIsArray($repositories);
+        $this->assertCount(1, $repositories);
+        $this->assertArrayHasKey('packagist.org', $repositories);
+        $this->assertInstanceOf(Repository::class, $repositories['packagist.org']);
 
         $require = $composerJson->getRequire();
         $this->assertInstanceOf(PackageMap::class, $require);
