@@ -1,9 +1,10 @@
 <?php
-use PHPUnit\Framework\TestCase;
+namespace MCStreetguy\ComposerParser\Tests;
 
+use MCStreetguy\ComposerParser\ComposerJson;
 use MCStreetguy\ComposerParser\Factory;
 use MCStreetguy\ComposerParser\Lockfile;
-use MCStreetguy\ComposerParser\ComposerJson;
+use PHPUnit\Framework\TestCase;
 
 class FactoryTest extends TestCase
 {
@@ -32,11 +33,10 @@ class FactoryTest extends TestCase
         $this->assertInstanceOf(Lockfile::class, $instance);
     }
 
-    /**
-     * @expectedException InvalidArgumentException
-     */
     public function testCantParseInvalid()
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         Factory::parse(__DIR__ . '/bootstrap.php');
     }
 }

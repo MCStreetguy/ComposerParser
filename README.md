@@ -10,6 +10,8 @@ composer require mcstreetguy/composer-parser
 
 ## Usage
 
+### Parsing
+
 I recommend using the provided magic Factory method for parsing:
 
 ``` php
@@ -31,7 +33,7 @@ $lockfile = ComposerParser::parseLockfile('/another/file');
 _Please note_ that ComposerParser will not complain about any missing fields, instead
 it fills all missing values with default ones to ensure integrity.    
 
-### Exception Handling
+#### Exception Handling
 
 During instatiation through the Factory, two exceptions may occur:
 
@@ -45,9 +47,9 @@ try {
 }
 ```
 
-### Direct Instatiation
+#### Doing it the manual way
 
-If you somehow can not rely on the Factory, you can also instantiate the class directly.  
+If you can not rely on the Factory for any reason, you can also instantiate the class directly.  
 **This is however not recommended and may lead to unexpected behaviour.**
 
 ``` php
@@ -62,8 +64,11 @@ $composerJson = new ComposerJson($parsedData);
 As you can see the constructor needs an array with the parsed json data.
 This applies to all constructor methods throughout the library.
 
-You can also create sub-components directly but keep in mind that you have
-to pass only the relevant part of the object!
+##### Sub-components
+
+You can also create sub-components directly.
+In this case you have to keep in mind, that their constructors only accept the isolated data from the composer manifest
+(e.g. the `Author` class expects you to pass only the contents of one of the objects in the `author`-field).
 
 ``` php
 use \MCStreetguy\ComposerParse\Json\Author;
@@ -74,7 +79,7 @@ $parsedData = json_decode($rawData, true);
 $author = new Author($parsedData['authors'][0]);
 ```
 
-## Data Retrieval
+### Data Retrieval
 
 All class instances provide getters for their properties.
 The structure is directly adapted from [the composer.json schema](https://getcomposer.org/doc/04-schema.md).
@@ -103,11 +108,11 @@ if ($composerJson->config->isEmpty()) {
 }
 ```
 
-### Special Classes
+#### Special Classes
 
 ComposerParser uses some special classes for parts of the json schema.
 
-#### PackageMap
+##### PackageMap
 
 The PackageMap class is used for the fields `require`, `require-dev`, `conflict`, `replace`, `provide` and `suggest`.
 It converts a json structure like this:
@@ -157,7 +162,7 @@ If you for some reason need the original mapped data you can retrieve it as foll
 $map = $require->getData();
 ```
 
-#### NamespaceMap
+##### NamespaceMap
 
 The NamespaceMap is used for the fields `autoload.psr-0` and `autoload.psr-4`.
 In fact this class is identical to the [PackageMap](#packagemap). The only difference are the map keys:
@@ -178,6 +183,18 @@ $psr4 = [
     ]
 ]
 ```
+
+### Global Configuration
+
+By default, the library tries to load your global configuration file, if there is any.
+It follows the location rules for the composer home directory [as defined in the documentation](https://getcomposer.org/doc/03-cli.md#composer-home).
+If there is no readable global configuration file present, this step is silently skipped.
+
+Just as composer itself, the following precedence rule applies to global configuration files:
+> In case global configuration matches local configuration, the local configuration in the project's composer.json always wins.
+_([source: https://getcomposer.org/doc/03-cli.md#composer-home-config-json](https://getcomposer.org/doc/03-cli.md#composer-home-config-json))_
+
+You may suppress this behaviour by passing `true` as second parameter to the `parse`, `parseComposerJson` and `parseLockfile` methods.
 
 ## Versioning
 

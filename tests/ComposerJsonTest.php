@@ -1,9 +1,10 @@
 <?php
-use PHPUnit\Framework\TestCase;
+namespace MCStreetguy\ComposerParser\Tests;
 
 use MCStreetguy\ComposerParser\ComposerJson;
 use MCStreetguy\ComposerParser\Json\Autoload;
 use MCStreetguy\ComposerParser\Service\PackageMap;
+use PHPUnit\Framework\TestCase;
 
 class ComposerJsonTest extends TestCase
 {
@@ -61,13 +62,13 @@ class ComposerJsonTest extends TestCase
         $this->assertEquals('https://github.com/MCStreetguy/ComposerLockParser', $composerJson->getHomepage());
 
         $license = $composerJson->getLicense();
-        $this->assertInternalType('array', $license);
+        $this->assertIsArray($license);
         $this->assertContains('MIT', $license);
 
         $authors = $composerJson->getAuthors();
-        $this->assertInternalType('array', $authors);
+        $this->assertIsArray($authors);
         $this->assertCount(1, $authors);
-        
+
         $this->assertInstanceOf(Autoload::class, $composerJson->getAutoload());
 
         $require = $composerJson->getRequire();
@@ -79,7 +80,7 @@ class ComposerJsonTest extends TestCase
         $this->assertCount(1, $requireDev);
         $this->assertContains([
             "package" => "mcstreetguy/tempearly",
-            "version" => "^0.4.2"
+            "version" => "^0.4.2",
         ], $requireDev);
     }
 }
