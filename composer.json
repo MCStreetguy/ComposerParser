@@ -15,8 +15,10 @@
             "MCStreetguy\\ComposerParser\\": "src/"
         }
     },
-    "require": {},
-    "require-dev": {
-        "mcstreetguy/tempearly": "^0.4.2"
-    }
+    "autoload-dev": {
+        "psr-4": {
+            "MCStreetguy\\ComposerParser\\Tests\\": "tests/"
+        }
+    },
+    "require": {}
 }
