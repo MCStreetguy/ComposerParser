@@ -178,7 +178,7 @@ class ComposerJson extends AbstractClass
      * @var array
      */
     protected $nonFeatureBranches;
-    
+
     /**
      * @var array
      */
@@ -194,7 +194,7 @@ class ComposerJson extends AbstractClass
     public function __construct(array $data = [])
     {
         $this->_data = $data;
-        
+
         // String data
         $this->name =               (array_key_exists('name', $data) ? $data['name'] : '');
         $this->description =        (array_key_exists('description', $data) ? $data['description'] : '');
@@ -241,7 +241,7 @@ class ComposerJson extends AbstractClass
             if (is_string($license)) {
                 $license = [$license];
             }
-            
+
             $this->license = $license;
         }
 
@@ -257,6 +257,14 @@ class ComposerJson extends AbstractClass
             foreach ($data['repositories'] as $repository) {
                 $this->repositories[] = new Repository($repository);
             }
+        }
+
+        if (!array_key_exists('repositories', $data) || (array_key_exists('packagist.org', $data['repositories']) && $data['repositories']['packagist.org'] !== false)) {
+            $this->repositories['packagist.org'] = new Repository([
+                'type' => 'composer',
+                'url' => 'https?://repo.packagist.org',
+                'allow_ssl_downgrade' => true,
+            ]);
         }
     }
 
@@ -569,7 +577,7 @@ class ComposerJson extends AbstractClass
     {
         return $this->nonFeatureBranches;
     }
-    
+
     /**
      * Get the whole manifest file as array.
      *
