@@ -186,9 +186,12 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 ## Authors
 
 * **Maximilian Schmidt** - _Owner_ - [MCStreetguy](https://github.com/MCStreetguy/)
-* **Anton Komarev** - _Active Contributor_ - [antonkomarev](https://github.com/antonkomarev)
 
 See also the list of [contributors](https://github.com/MCStreetguy/ComposerParser/contributors) who participated in this project.
+
+### Acknowledgement
+
+Special thanks go to [antonkomarev](https://github.com/antonkomarev) who helped discovering and fixing several deeply nested bugs in the libraries architecture.
 
 ## License
 
