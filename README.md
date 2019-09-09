@@ -1,13 +1,15 @@
 # Composer Parser
-**A parser library for composer.json and lockfiles.**
+
+**A dependency-free parser library for composer.json and composer.lock files.**
 
 ## Installation
 
 ``` bash
-$ composer require mcstreetguy/composer-parser
+composer require mcstreetguy/composer-parser
 ```
 
-## Instantiation
+## Usage
+
 I recommend using the provided magic Factory method for parsing:
 
 ``` php
@@ -30,6 +32,7 @@ _Please note_ that ComposerParser will not complain about any missing fields, in
 it fills all missing values with default ones to ensure integrity.    
 
 ### Exception Handling
+
 During instatiation through the Factory, two exceptions may occur:
 
 ``` php
@@ -43,7 +46,8 @@ try {
 ```
 
 ### Direct Instatiation
-If you somehow can not rely on the Factory, you can also instantiate the class directly.   
+
+If you somehow can not rely on the Factory, you can also instantiate the class directly.  
 **This is however not recommended and may lead to unexpected behaviour.**
 
 ``` php
@@ -71,6 +75,7 @@ $author = new Author($parsedData['authors'][0]);
 ```
 
 ## Data Retrieval
+
 All class instances provide getters for their properties.
 The structure is directly adapted from [the composer.json schema](https://getcomposer.org/doc/04-schema.md).
 The corresponding property names of wrapper classes have been converted to camelCase (see the [PSR-1 standard](https://www.php-fig.org/psr/psr-1/#4-class-constants-properties-and-method) for further information).
@@ -99,9 +104,11 @@ if ($composerJson->config->isEmpty()) {
 ```
 
 ### Special Classes
+
 ComposerParser uses some special classes for parts of the json schema.
 
 #### PackageMap
+
 The PackageMap class is used for the fields `require`, `require-dev`, `conflict`, `replace`, `provide` and `suggest`.
 It converts a json structure like this:
 
@@ -151,6 +158,7 @@ $map = $require->getData();
 ```
 
 #### NamespaceMap
+
 The NamespaceMap is used for the fields `autoload.psr-0` and `autoload.psr-4`.
 In fact this class is identical to the [PackageMap](#packagemap). The only difference are the map keys:
 
@@ -170,3 +178,18 @@ $psr4 = [
     ]
 ]
 ```
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/MCStreetguy/ComposerParser/tags). 
+
+## Authors
+
+* **Maximilian Schmidt** - _Owner_ - [MCStreetguy](https://github.com/MCStreetguy/)
+* **Anton Komarev** - _Active Contributor_ - [antonkomarev](https://github.com/antonkomarev)
+
+See also the list of [contributors](https://github.com/MCStreetguy/ComposerParser/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
