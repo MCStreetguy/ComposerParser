@@ -20,5 +20,8 @@
             "MCStreetguy\\ComposerParser\\Tests\\": "tests/"
         }
     },
-    "require": {}
+    "require": {},
+    "require-dev": {
+        "mcstreetguy/tempearly": "^0.4.2"
+    }
 }

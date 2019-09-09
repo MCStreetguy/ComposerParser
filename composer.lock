@@ -1,0 +1,51 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "3f53494a99f48d23a191ddc411e06dac",
+    "packages": [],
+    "packages-dev": [
+        {
+            "name": "mcstreetguy/tempearly",
+            "version": "v0.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MCStreetguy/Tempearly.git",
+                "reference": "1f6bef7e944c7035d3439cf4edd74c17e3b5d697"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MCStreetguy/Tempearly/zipball/1f6bef7e944c7035d3439cf4edd74c17e3b5d697",
+                "reference": "1f6bef7e944c7035d3439cf4edd74c17e3b5d697",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MCStreetguy\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Maximilian Schmidt",
+                    "email": "maximilianschmidt404@gmail.com"
+                }
+            ],
+            "description": "A tiny PHP templating engine.",
+            "time": "2018-01-20T00:00:56+00:00"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
