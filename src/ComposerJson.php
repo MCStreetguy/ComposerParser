@@ -2,16 +2,15 @@
 
 namespace MCStreetguy\ComposerParser;
 
-use MCStreetguy\ComposerParser\Json\Author;
-use MCStreetguy\ComposerParser\Json\Support;
 use MCStreetguy\ComposerParser\Json\Archive;
+use MCStreetguy\ComposerParser\Json\Author;
 use MCStreetguy\ComposerParser\Json\Autoload;
 use MCStreetguy\ComposerParser\Json\Config;
 use MCStreetguy\ComposerParser\Json\Repository;
 use MCStreetguy\ComposerParser\Json\Scripts;
-
-use MCStreetguy\ComposerParser\Service\PackageMap;
+use MCStreetguy\ComposerParser\Json\Support;
 use MCStreetguy\ComposerParser\Service\AbstractClass;
+use MCStreetguy\ComposerParser\Service\PackageMap;
 
 /**
  * This class represents the data of an composer.json file the oop way.
@@ -196,42 +195,42 @@ class ComposerJson extends AbstractClass
         $this->_data = $data;
 
         // String data
-        $this->name =               (array_key_exists('name', $data) ? $data['name'] : '');
-        $this->description =        (array_key_exists('description', $data) ? $data['description'] : '');
-        $this->version =            (array_key_exists('version', $data) ? $data['version'] : '');
-        $this->type =               (array_key_exists('type', $data) ? $data['type'] : '');
-        $this->homepage =           (array_key_exists('homepage', $data) ? $data['homepage'] : '');
-        $this->readme =             (array_key_exists('readme', $data) ? $data['readme'] : '');
-        $this->time =               (array_key_exists('time', $data) ? $data['time'] : '');
-        $this->targetDir =          (array_key_exists('target-dir', $data) ? $data['target-dir'] : '');
-        $this->minimumStability =   (array_key_exists('minimum-stability', $data) ? $data['minimum-stability'] : '');
+        $this->name = (array_key_exists('name', $data) ? $data['name'] : '');
+        $this->description = (array_key_exists('description', $data) ? $data['description'] : '');
+        $this->version = (array_key_exists('version', $data) ? $data['version'] : '');
+        $this->type = (array_key_exists('type', $data) ? $data['type'] : '');
+        $this->homepage = (array_key_exists('homepage', $data) ? $data['homepage'] : '');
+        $this->readme = (array_key_exists('readme', $data) ? $data['readme'] : '');
+        $this->time = (array_key_exists('time', $data) ? $data['time'] : '');
+        $this->targetDir = (array_key_exists('target-dir', $data) ? $data['target-dir'] : '');
+        $this->minimumStability = (array_key_exists('minimum-stability', $data) ? $data['minimum-stability'] : '');
 
         // Boolean data
-        $this->preferStable =       (array_key_exists('prefer-stable', $data) && $data['prefer-stable']);
-        $this->abandoned =          (array_key_exists('abandoned', $data) && $data['abandoned']);
+        $this->preferStable = (array_key_exists('prefer-stable', $data) && $data['prefer-stable']);
+        $this->abandoned = (array_key_exists('abandoned', $data) && $data['abandoned']);
 
         // Array data
-        $this->keywords =           (array_key_exists('keywords', $data) ? $data['keywords'] : []);
-        $this->includePath =        (array_key_exists('include-path', $data) ? $data['include-path'] : []);
-        $this->extra =              (array_key_exists('extra', $data) ? $data['extra'] : []);
-        $this->bin =                (array_key_exists('bin', $data) ? $data['bin'] : []);
+        $this->keywords = (array_key_exists('keywords', $data) ? $data['keywords'] : []);
+        $this->includePath = (array_key_exists('include-path', $data) ? $data['include-path'] : []);
+        $this->extra = (array_key_exists('extra', $data) ? $data['extra'] : []);
+        $this->bin = (array_key_exists('bin', $data) ? $data['bin'] : []);
         $this->nonFeatureBranches = (array_key_exists('non-feature-branches', $data) ? $data['non-feature-branches'] : []);
 
         // Recursive data
-        $this->support =            (array_key_exists('support', $data) ? new Support($data['support']) : new Support());
-        $this->autoload =           (array_key_exists('autoload', $data) ? new Autoload($data['autoload']) : new Autoload());
-        $this->autoloadDev =        (array_key_exists('autoload-dev', $data) ? new Autoload($data['autoload-dev']) : new Autoload());
-        $this->config =             (array_key_exists('config', $data) ? new Config($data['config']) : new Config());
-        $this->scripts =            (array_key_exists('scripts', $data) ? new Scripts($data['scripts']) : new Scripts());
-        $this->archive =            (array_key_exists('archive', $data) ? new Archive($data['archive']) : new Archive());
+        $this->support = (array_key_exists('support', $data) ? new Support($data['support']) : new Support());
+        $this->autoload = (array_key_exists('autoload', $data) ? new Autoload($data['autoload']) : new Autoload());
+        $this->autoloadDev = (array_key_exists('autoload-dev', $data) ? new Autoload($data['autoload-dev']) : new Autoload());
+        $this->config = (array_key_exists('config', $data) ? new Config($data['config']) : new Config());
+        $this->scripts = (array_key_exists('scripts', $data) ? new Scripts($data['scripts']) : new Scripts());
+        $this->archive = (array_key_exists('archive', $data) ? new Archive($data['archive']) : new Archive());
 
         // Mapped data
-        $this->require =            (array_key_exists('require', $data) ? new PackageMap($data['require']) : new PackageMap());
-        $this->requireDev =         (array_key_exists('require-dev', $data) ? new PackageMap($data['require-dev']) : new PackageMap());
-        $this->conflict =           (array_key_exists('conflict', $data) ? new PackageMap($data['conflict']) : new PackageMap());
-        $this->replace =            (array_key_exists('replace', $data) ? new PackageMap($data['replace']) : new PackageMap());
-        $this->provide =            (array_key_exists('provide', $data) ? new PackageMap($data['provide']) : new PackageMap());
-        $this->suggest =            (array_key_exists('suggest', $data) ? new PackageMap($data['suggest']) : new PackageMap());
+        $this->require = (array_key_exists('require', $data) ? new PackageMap($data['require']) : new PackageMap());
+        $this->requireDev = (array_key_exists('require-dev', $data) ? new PackageMap($data['require-dev']) : new PackageMap());
+        $this->conflict = (array_key_exists('conflict', $data) ? new PackageMap($data['conflict']) : new PackageMap());
+        $this->replace = (array_key_exists('replace', $data) ? new PackageMap($data['replace']) : new PackageMap());
+        $this->provide = (array_key_exists('provide', $data) ? new PackageMap($data['provide']) : new PackageMap());
+        $this->suggest = (array_key_exists('suggest', $data) ? new PackageMap($data['suggest']) : new PackageMap());
 
         // Special cases
         $this->license = [];
@@ -253,13 +252,20 @@ class ComposerJson extends AbstractClass
         }
 
         $this->repositories = [];
+        $packagistOrgDisabled = false;
+
         if (array_key_exists('repositories', $data)) {
             foreach ($data['repositories'] as $repository) {
+                if (array_key_exists('packagist.org', $repository) && $repository['packagist.org'] === false) {
+                    $packagistOrgDisabled = true;
+                    continue;
+                }
+
                 $this->repositories[] = new Repository($repository);
             }
         }
 
-        if (!array_key_exists('repositories', $data) || (array_key_exists('packagist.org', $data['repositories']) && $data['repositories']['packagist.org'] !== false)) {
+        if ($packagistOrgDisabled === false) {
             $this->repositories['packagist.org'] = new Repository([
                 'type' => 'composer',
                 'url' => 'https?://repo.packagist.org',
