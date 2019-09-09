@@ -45,7 +45,7 @@ class Repository extends AbstractClass
         $this->url = (array_key_exists('url', $data) ? $data['url'] : '');
         $this->options = (array_key_exists('options', $data) ? $data['options'] : []);
 
-        $this->package = (array_key_exists('package', $data) ? new ComposerJson($data['pacakge']) : null);
+        $this->package = (array_key_exists('package', $data) ? new ComposerJson($data['package']) : null);
     }
 
     /**
@@ -70,7 +70,7 @@ class Repository extends AbstractClass
      * Gets the additional options of the repository.
      * @return array
      */
-    public function getOptions() : string
+    public function getOptions() : array
     {
         return $this->options;
     }
@@ -79,7 +79,7 @@ class Repository extends AbstractClass
      * Gets the parsed "package" key of the repository.
      * @return ComposerJson|null
      */
-    public function getPackage() : ComposerJson
+    public function getPackage() : ?ComposerJson
     {
         return $this->package;
     }
