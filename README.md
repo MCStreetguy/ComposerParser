@@ -200,6 +200,12 @@ You may suppress this behaviour by passing `true` as second parameter to the `pa
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/MCStreetguy/ComposerParser/tags). 
 
+## Testing
+
+If you contribute to this project, you have to ensure that your changes don't mess up the existing functionality.
+Therefore this repository comes with a PhpUnit testing configuration, that you can execute by running `make test`.
+See [their documentation](https://phpunit.readthedocs.io/en/8.2/installation.html) on more information on how to install the tool.
+
 ## Authors
 
 * **Maximilian Schmidt** - _Owner_ - [MCStreetguy](https://github.com/MCStreetguy/)
