@@ -255,17 +255,17 @@ class ComposerJson extends AbstractClass
         $packagistOrgDisabled = false;
 
         if (array_key_exists('repositories', $data)) {
-            foreach ($data['repositories'] as $repository) {
+            foreach ($data['repositories'] as $key => $repository) {
                 if (array_key_exists('packagist.org', $repository) && $repository['packagist.org'] === false) {
                     $packagistOrgDisabled = true;
                     continue;
                 }
 
-                $this->repositories[] = new Repository($repository);
+                $this->repositories[$key] = new Repository($repository);
             }
         }
 
-        if ($packagistOrgDisabled === false) {
+        if ($packagistOrgDisabled === false && !isset($this->repositories['packagist.org'])) {
             $this->repositories['packagist.org'] = new Repository([
                 'type' => 'composer',
                 'url' => 'https?://repo.packagist.org',
