@@ -58,7 +58,7 @@ class Autoload extends AbstractClass
      * Gets the autoloaded PSR-4 namespace map.
      * @return NamespaceMap
      */
-    public function getPsr4() : NamespaceMap
+    public function getPsr4(): NamespaceMap
     {
         return $this->psr4;
     }
@@ -67,7 +67,7 @@ class Autoload extends AbstractClass
      * Gets the autoloaded PSR-0 namespace map.
      * @return NamespaceMap
      */
-    public function getPsr0() : NamespaceMap
+    public function getPsr0(): NamespaceMap
     {
         return $this->psr0;
     }
@@ -76,7 +76,7 @@ class Autoload extends AbstractClass
      * Gets the autoloaded classmap.
      * @return array
      */
-    public function getClassmap() : array
+    public function getClassmap(): array
     {
         return $this->classmap;
     }
@@ -85,7 +85,7 @@ class Autoload extends AbstractClass
      * Gets the autoloaded files.
      * @return array
      */
-    public function getFiles() : array
+    public function getFiles(): array
     {
         return $this->files;
     }
@@ -94,7 +94,7 @@ class Autoload extends AbstractClass
      * Gets the excluded files from the classmap.
      * @return array
      */
-    public function getExcludeFromClassmap() : array
+    public function getExcludeFromClassmap(): array
     {
         return $this->excludeFromClassmap;
     }

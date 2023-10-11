@@ -53,7 +53,7 @@ abstract class AbstractMap extends IsThisEmpty implements \Iterator, \ArrayAcces
      * @see http://php.net/manual/de/iterator.rewind.php
      * @return void
      */
-    public function rewind()
+    public function rewind(): void
     {
         $this->position = 0;
     }
@@ -64,7 +64,7 @@ abstract class AbstractMap extends IsThisEmpty implements \Iterator, \ArrayAcces
      * @see http://php.net/manual/de/iterator.current.php
      * @return array
      */
-    public function current()
+    public function current(): array
     {
         return $this->list[$this->position];
     }
@@ -75,7 +75,7 @@ abstract class AbstractMap extends IsThisEmpty implements \Iterator, \ArrayAcces
      * @see http://php.net/manual/de/iterator.key.php
      * @return int
      */
-    public function key()
+    public function key(): int
     {
         return $this->position;
     }
@@ -86,7 +86,7 @@ abstract class AbstractMap extends IsThisEmpty implements \Iterator, \ArrayAcces
      * @see http://php.net/manual/de/iterator.next.php
      * @return void
      */
-    public function next()
+    public function next(): void
     {
         ++$this->position;
     }
@@ -97,7 +97,7 @@ abstract class AbstractMap extends IsThisEmpty implements \Iterator, \ArrayAcces
      * @see http://php.net/manual/de/iterator.valid.php
      * @return bool
      */
-    public function valid()
+    public function valid(): bool
     {
         return $this->offsetExists($this->position);
     }
@@ -110,7 +110,7 @@ abstract class AbstractMap extends IsThisEmpty implements \Iterator, \ArrayAcces
      * @param mixed $value The value to store
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->list[] = $value;
@@ -126,7 +126,7 @@ abstract class AbstractMap extends IsThisEmpty implements \Iterator, \ArrayAcces
      * @param int $offset The desired offset
      * @return bool
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->list[$offset]);
     }
@@ -138,7 +138,7 @@ abstract class AbstractMap extends IsThisEmpty implements \Iterator, \ArrayAcces
      * @param int $offset The desired offset
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->list[$offset]);
     }
@@ -150,7 +150,7 @@ abstract class AbstractMap extends IsThisEmpty implements \Iterator, \ArrayAcces
      * @param int $offset The desired offset
      * @return mixed
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         return $this->offsetExists($offset) ? $this->list[$offset] : null;
     }
@@ -160,7 +160,7 @@ abstract class AbstractMap extends IsThisEmpty implements \Iterator, \ArrayAcces
      *
      * @return array
      */
-    public function getData() : array
+    public function getData(): array
     {
         return $this->data;
     }
@@ -170,7 +170,7 @@ abstract class AbstractMap extends IsThisEmpty implements \Iterator, \ArrayAcces
      *
      * @return array
      */
-    public function getRawData() : array
+    public function getRawData(): array
     {
         return $this->list;
     }
@@ -180,7 +180,7 @@ abstract class AbstractMap extends IsThisEmpty implements \Iterator, \ArrayAcces
      *
      * @return array
      */
-    public function getMapKeys()
+    public function getMapKeys(): array
     {
         return $this->mapKeys;
     }

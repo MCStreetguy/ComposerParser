@@ -10,7 +10,7 @@ abstract class IsThisEmpty
     /**
      * Checks if the current instance is empty by evaluating all properties.
      */
-    public function isEmpty()
+    public function isEmpty(): bool
     {
         foreach ($this as $prop => $value) {
             if (!empty($this->$prop)) {

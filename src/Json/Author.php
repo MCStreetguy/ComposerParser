@@ -50,7 +50,7 @@ class Author extends AbstractClass
      * Gets the authors name.
      * @return string
      */
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -59,7 +59,7 @@ class Author extends AbstractClass
      * Gets the authors email.
      * @return string
      */
-    public function getEmail() : string
+    public function getEmail(): string
     {
         return $this->email;
     }
@@ -68,7 +68,7 @@ class Author extends AbstractClass
      * Gets the authors homepage url.
      * @return string
      */
-    public function getHomepage() : string
+    public function getHomepage(): string
     {
         return $this->homepage;
     }
@@ -77,7 +77,7 @@ class Author extends AbstractClass
      * Gets the authors role.
      * @return string
      */
-    public function getRole() : string
+    public function getRole(): string
     {
         return $this->role;
     }

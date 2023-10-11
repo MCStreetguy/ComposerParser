@@ -28,7 +28,7 @@ class Factory
      * @throws InvalidArgumentException
      * @throws RuntimeException
      */
-    public static function parse(string $path, bool $ignoreGlobal = false)
+    public static function parse(string $path, bool $ignoreGlobal = false): ComposerJson|Lockfile
     {
         if (preg_match('/composer\.json$/', $path)) {
             return self::parseComposerJson($path);

@@ -150,7 +150,7 @@ class Scripts extends AbstractClass
      *
      * @return  array
      */
-    public function getPreInstallCmd()
+    public function getPreInstallCmd(): array
     {
         return $this->preInstallCmd;
     }
@@ -160,7 +160,7 @@ class Scripts extends AbstractClass
      *
      * @return  array
      */
-    public function getPostInstallCmd()
+    public function getPostInstallCmd(): array
     {
         return $this->postInstallCmd;
     }
@@ -170,7 +170,7 @@ class Scripts extends AbstractClass
      *
      * @return  array
      */
-    public function getPreUpdateCmd()
+    public function getPreUpdateCmd(): array
     {
         return $this->preUpdateCmd;
     }
@@ -180,7 +180,7 @@ class Scripts extends AbstractClass
      *
      * @return  array
      */
-    public function getPostUpdateCmd()
+    public function getPostUpdateCmd(): array
     {
         return $this->postUpdateCmd;
     }
@@ -190,7 +190,7 @@ class Scripts extends AbstractClass
      *
      * @return  array
      */
-    public function getPostStatusCmd()
+    public function getPostStatusCmd(): array
     {
         return $this->postStatusCmd;
     }
@@ -200,7 +200,7 @@ class Scripts extends AbstractClass
      *
      * @return  array
      */
-    public function getPreArchiveCmd()
+    public function getPreArchiveCmd(): array
     {
         return $this->preArchiveCmd;
     }
@@ -210,7 +210,7 @@ class Scripts extends AbstractClass
      *
      * @return  array
      */
-    public function getPostArchiveCmd()
+    public function getPostArchiveCmd(): array
     {
         return $this->postArchiveCmd;
     }
@@ -220,7 +220,7 @@ class Scripts extends AbstractClass
      *
      * @return  array
      */
-    public function getPreAutloadDump()
+    public function getPreAutloadDump(): array
     {
         return $this->preAutloadDump;
     }
@@ -230,7 +230,7 @@ class Scripts extends AbstractClass
      *
      * @return  array
      */
-    public function getPostAutoloadDump()
+    public function getPostAutoloadDump(): array
     {
         return $this->postAutoloadDump;
     }
@@ -240,7 +240,7 @@ class Scripts extends AbstractClass
      *
      * @return  array
      */
-    public function getPostRootPackageInstall()
+    public function getPostRootPackageInstall(): array
     {
         return $this->postRootPackageInstall;
     }
@@ -250,7 +250,7 @@ class Scripts extends AbstractClass
      *
      * @return  array
      */
-    public function getPostCreateProjectCmd()
+    public function getPostCreateProjectCmd(): array
     {
         return $this->postCreateProjectCmd;
     }
@@ -260,7 +260,7 @@ class Scripts extends AbstractClass
      *
      * @return  array
      */
-    public function getPreDependenciesSolving()
+    public function getPreDependenciesSolving(): array
     {
         return $this->preDependenciesSolving;
     }
@@ -270,7 +270,7 @@ class Scripts extends AbstractClass
      *
      * @return  array
      */
-    public function getPostDependenciesSolving()
+    public function getPostDependenciesSolving(): array
     {
         return $this->postDependenciesSolving;
     }
@@ -280,7 +280,7 @@ class Scripts extends AbstractClass
      *
      * @return  array
      */
-    public function getPrePackageInstall()
+    public function getPrePackageInstall(): array
     {
         return $this->prePackageInstall;
     }
@@ -290,7 +290,7 @@ class Scripts extends AbstractClass
      *
      * @return  array
      */
-    public function getPostPackageInstall()
+    public function getPostPackageInstall(): array
     {
         return $this->postPackageInstall;
     }
@@ -300,7 +300,7 @@ class Scripts extends AbstractClass
      *
      * @return  array
      */
-    public function getPrePackageUpdate()
+    public function getPrePackageUpdate(): array
     {
         return $this->prePackageUpdate;
     }
@@ -310,7 +310,7 @@ class Scripts extends AbstractClass
      *
      * @return  array
      */
-    public function getPostPackageUpdate()
+    public function getPostPackageUpdate(): array
     {
         return $this->postPackageUpdate;
     }
@@ -320,7 +320,7 @@ class Scripts extends AbstractClass
      *
      * @return  array
      */
-    public function getPrePackageUninstall()
+    public function getPrePackageUninstall(): array
     {
         return $this->prePackageUninstall;
     }
@@ -330,7 +330,7 @@ class Scripts extends AbstractClass
      *
      * @return  array
      */
-    public function getPostPackageUninstall()
+    public function getPostPackageUninstall(): array
     {
         return $this->postPackageUninstall;
     }
@@ -340,7 +340,7 @@ class Scripts extends AbstractClass
      *
      * @return  array
      */
-    public function getInit()
+    public function getInit(): array
     {
         return $this->init;
     }
@@ -350,7 +350,7 @@ class Scripts extends AbstractClass
      *
      * @return  array
      */
-    public function getCommand()
+    public function getCommand(): array
     {
         return $this->command;
     }
@@ -360,7 +360,7 @@ class Scripts extends AbstractClass
      *
      * @return  array
      */
-    public function getPreFileDownload()
+    public function getPreFileDownload(): array
     {
         return $this->preFileDownload;
     }
@@ -370,7 +370,7 @@ class Scripts extends AbstractClass
      *
      * @return  array
      */
-    public function getPreCommandRun()
+    public function getPreCommandRun(): array
     {
         return $this->preCommandRun;
     }

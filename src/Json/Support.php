@@ -74,7 +74,7 @@ class Support extends AbstractClass
      * Gets the email address.
      * @return string
      */
-    public function getEmail() : string
+    public function getEmail(): string
     {
         return $this->email;
     }
@@ -83,7 +83,7 @@ class Support extends AbstractClass
      * Gets the issue page url.
      * @return string
      */
-    public function getIssues() : string
+    public function getIssues(): string
     {
         return $this->issues;
     }
@@ -92,7 +92,7 @@ class Support extends AbstractClass
      * Gets the forum url.
      * @return string
      */
-    public function getForum() : string
+    public function getForum(): string
     {
         return $this->forum;
     }
@@ -101,7 +101,7 @@ class Support extends AbstractClass
      * Gets the wiki url.
      * @return string
      */
-    public function getWiki() : string
+    public function getWiki(): string
     {
         return $this->wiki;
     }
@@ -110,7 +110,7 @@ class Support extends AbstractClass
      * Gets the irc chat address.
      * @return string
      */
-    public function getIrc() : string
+    public function getIrc(): string
     {
         return $this->irc;
     }
@@ -119,7 +119,7 @@ class Support extends AbstractClass
      * Gets the code source url.
      * @return string
      */
-    public function getSource() : string
+    public function getSource(): string
     {
         return $this->source;
     }
@@ -128,7 +128,7 @@ class Support extends AbstractClass
      * Gets the documentation url.
      * @return string
      */
-    public function getDocs() : string
+    public function getDocs(): string
     {
         return $this->docs;
     }
@@ -137,7 +137,7 @@ class Support extends AbstractClass
      * Gets the rss feed address.
      * @return string
      */
-    public function getRss() : string
+    public function getRss(): string
     {
         return $this->rss;
     }
