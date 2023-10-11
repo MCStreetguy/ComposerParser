@@ -279,7 +279,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
@@ -289,7 +289,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  string
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -299,7 +299,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  string
      */
-    public function getVersion()
+    public function getVersion(): string
     {
         return $this->version;
     }
@@ -309,7 +309,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  string
      */
-    public function getType()
+    public function getType(): string
     {
         return $this->type;
     }
@@ -319,7 +319,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  array
      */
-    public function getKeywords()
+    public function getKeywords(): array
     {
         return $this->keywords;
     }
@@ -329,7 +329,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  string
      */
-    public function getHomepage()
+    public function getHomepage(): string
     {
         return $this->homepage;
     }
@@ -339,7 +339,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  string
      */
-    public function getReadme()
+    public function getReadme(): string
     {
         return $this->readme;
     }
@@ -349,7 +349,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  string
      */
-    public function getTime()
+    public function getTime(): string
     {
         return $this->time;
     }
@@ -359,7 +359,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  array
      */
-    public function getLicense()
+    public function getLicense(): array
     {
         return $this->license;
     }
@@ -369,7 +369,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  Author[]
      */
-    public function getAuthors()
+    public function getAuthors(): Author
     {
         return $this->authors;
     }
@@ -379,7 +379,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  Support
      */
-    public function getSupport()
+    public function getSupport(): Support
     {
         return $this->support;
     }
@@ -389,7 +389,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  PackageMap
      */
-    public function getRequire()
+    public function getRequire(): PackageMap
     {
         return $this->require;
     }
@@ -399,7 +399,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  PackageMap
      */
-    public function getRequireDev()
+    public function getRequireDev(): PackageMap
     {
         return $this->requireDev;
     }
@@ -409,7 +409,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  PackageMap
      */
-    public function getConflict()
+    public function getConflict(): PackageMap
     {
         return $this->conflict;
     }
@@ -419,7 +419,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  PackageMap
      */
-    public function getReplace()
+    public function getReplace(): PackageMap
     {
         return $this->replace;
     }
@@ -429,7 +429,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  PackageMap
      */
-    public function getProvide()
+    public function getProvide(): PackageMap
     {
         return $this->provide;
     }
@@ -439,7 +439,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  PackageMap
      */
-    public function getSuggest()
+    public function getSuggest(): PackageMap
     {
         return $this->suggest;
     }
@@ -449,7 +449,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  Autoload
      */
-    public function getAutoload()
+    public function getAutoload(): Autoload
     {
         return $this->autoload;
     }
@@ -459,7 +459,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  Autoload
      */
-    public function getAutoloadDev()
+    public function getAutoloadDev(): Autoload
     {
         return $this->autoloadDev;
     }
@@ -469,7 +469,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  array
      */
-    public function getIncludePath()
+    public function getIncludePath(): array
     {
         return $this->includePath;
     }
@@ -479,7 +479,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  string
      */
-    public function getTargetDir()
+    public function getTargetDir(): string
     {
         return $this->targetDir;
     }
@@ -489,7 +489,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  string
      */
-    public function getMinimumStability()
+    public function getMinimumStability(): string
     {
         return $this->minimumStability;
     }
@@ -499,7 +499,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  bool
      */
-    public function isPreferringStable()
+    public function isPreferringStable(): bool
     {
         return $this->preferStable;
     }
@@ -509,7 +509,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  Repository[]
      */
-    public function getRepositories()
+    public function getRepositories(): Repository
     {
         return $this->repositories;
     }
@@ -519,7 +519,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  Config
      */
-    public function getConfig()
+    public function getConfig(): Config
     {
         return $this->config;
     }
@@ -529,7 +529,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  Scripts
      */
-    public function getScripts()
+    public function getScripts(): Scripts
     {
         return $this->scripts;
     }
@@ -539,7 +539,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  array
      */
-    public function getExtra()
+    public function getExtra(): array
     {
         return $this->extra;
     }
@@ -549,7 +549,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  array
      */
-    public function getBin()
+    public function getBin(): array
     {
         return $this->bin;
     }
@@ -559,7 +559,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  Archive
      */
-    public function getArchive()
+    public function getArchive(): Archive
     {
         return $this->archive;
     }
@@ -569,7 +569,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  bool
      */
-    public function isAbandoned()
+    public function isAbandoned(): bool
     {
         return $this->abandoned;
     }
@@ -579,7 +579,7 @@ class ComposerJson extends AbstractClass
      *
      * @return  array
      */
-    public function getNonFeatureBranches()
+    public function getNonFeatureBranches(): array
     {
         return $this->nonFeatureBranches;
     }
@@ -589,7 +589,7 @@ class ComposerJson extends AbstractClass
      *
      * @return array
      */
-    public function toArray()
+    public function toArray(): array
     {
         return $this->_data;
     }

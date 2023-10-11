@@ -31,7 +31,7 @@ class NamespaceMap extends AbstractMap implements \Iterator, \ArrayAccess
      *
      * @return array
      */
-    public function getNamespaces() : array
+    public function getNamespaces(): array
     {
         return $this->getRawData();
     }

@@ -30,7 +30,7 @@ class PackageMap extends AbstractMap implements \Iterator, \ArrayAccess
      *
      * @return array
      */
-    public function getPackages() : array
+    public function getPackages(): array
     {
         return $this->getRawData();
     }

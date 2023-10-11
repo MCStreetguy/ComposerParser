@@ -16,7 +16,7 @@ abstract class PropertyHelper
      * @param string $property The property name in camelCase
      * @return string The json key in kebab-case
      */
-    public static function convertPropertyToJsonKey(string $property) : string
+    public static function convertPropertyToJsonKey(string $property): string
     {
         $key = preg_replace('/(?<=\w)[A-Z]/', "-$1", $property);
         $key = strtolower($key);
@@ -30,7 +30,7 @@ abstract class PropertyHelper
      * @param string $key The json ke yin kebab-case
      * @return string The property name in camelCase
      */
-    public static function convertJsonKeyToProperty(string $key) : string
+    public static function convertJsonKeyToProperty(string $key): string
     {
         $property = preg_replace_callback('/(?<=\w)-([a-z])/', function (array $matches) {
             return \strtoupper($matches[1]);

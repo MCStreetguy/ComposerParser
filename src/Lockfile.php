@@ -108,7 +108,7 @@ class Lockfile extends AbstractClass
      *
      * @return  string
      */
-    public function getReadme()
+    public function getReadme(): string
     {
         return $this->readme;
     }
@@ -118,7 +118,7 @@ class Lockfile extends AbstractClass
      *
      * @return  string
      */
-    public function getContentHash()
+    public function getContentHash(): string
     {
         return $this->contentHash;
     }
@@ -128,7 +128,7 @@ class Lockfile extends AbstractClass
      *
      * @return  PackageMap
      */
-    public function getPackages()
+    public function getPackages(): PackageMap
     {
         return $this->packages;
     }
@@ -138,7 +138,7 @@ class Lockfile extends AbstractClass
      *
      * @return  PackageMap
      */
-    public function getPackagesDev()
+    public function getPackagesDev(): PackageMap
     {
         return $this->packagesDev;
     }
@@ -148,7 +148,7 @@ class Lockfile extends AbstractClass
      *
      * @return  array
      */
-    public function getAliases()
+    public function getAliases(): array
     {
         return $this->aliases;
     }
@@ -158,7 +158,7 @@ class Lockfile extends AbstractClass
      *
      * @return  string
      */
-    public function getMinimumStability()
+    public function getMinimumStability(): string
     {
         return $this->minimumStability;
     }
@@ -168,7 +168,7 @@ class Lockfile extends AbstractClass
      *
      * @return  array
      */
-    public function getStabilityFlags()
+    public function getStabilityFlags(): array
     {
         return $this->stabilityFlags;
     }
@@ -178,7 +178,7 @@ class Lockfile extends AbstractClass
      *
      * @return  bool
      */
-    public function getPreferStable()
+    public function getPreferStable(): bool
     {
         return $this->preferStable;
     }
@@ -188,7 +188,7 @@ class Lockfile extends AbstractClass
      *
      * @return  bool
      */
-    public function getPreferLowest()
+    public function getPreferLowest(): bool
     {
         return $this->preferLowest;
     }
@@ -198,7 +198,7 @@ class Lockfile extends AbstractClass
      *
      * @return  PackageMap
      */
-    public function getPlatform()
+    public function getPlatform(): PackageMap
     {
         return $this->platform;
     }
@@ -208,7 +208,7 @@ class Lockfile extends AbstractClass
      *
      * @return  PackageMap
      */
-    public function getPlatformDev()
+    public function getPlatformDev(): PackageMap
     {
         return $this->platformDev;
     }
@@ -218,7 +218,7 @@ class Lockfile extends AbstractClass
      *
      * @return  PackageMap
      */
-    public function getPlatformOverrides()
+    public function getPlatformOverrides(): PackageMap
     {
         return $this->platformOverrides;
     }

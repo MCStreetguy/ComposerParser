@@ -42,7 +42,7 @@ class Source extends AbstractClass
      *
      * @return  string
      */
-    public function getType()
+    public function getType(): string
     {
         return $this->type;
     }
@@ -52,7 +52,7 @@ class Source extends AbstractClass
      *
      * @return  string
      */
-    public function getUrl()
+    public function getUrl(): string
     {
         return $this->url;
     }
@@ -62,7 +62,7 @@ class Source extends AbstractClass
      *
      * @return  string
      */
-    public function getReference()
+    public function getReference(): string
     {
         return $this->reference;
     }

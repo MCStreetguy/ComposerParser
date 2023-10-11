@@ -33,7 +33,7 @@ class Archive extends AbstractClass
      *
      * @return  array
      */
-    public function getExclude()
+    public function getExclude(): array
     {
         return $this->exclude;
     }

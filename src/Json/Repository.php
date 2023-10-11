@@ -52,7 +52,7 @@ class Repository extends AbstractClass
      * Gets the type of the repository.
      * @return string
      */
-    public function getType() : string
+    public function getType(): string
     {
         return $this->type;
     }
@@ -61,7 +61,7 @@ class Repository extends AbstractClass
      * Gets the url of the repository.
      * @return string
      */
-    public function getUrl() : string
+    public function getUrl(): string
     {
         return $this->url;
     }
@@ -70,7 +70,7 @@ class Repository extends AbstractClass
      * Gets the additional options of the repository.
      * @return array
      */
-    public function getOptions() : array
+    public function getOptions(): array
     {
         return $this->options;
     }
@@ -79,7 +79,7 @@ class Repository extends AbstractClass
      * Gets the parsed "package" key of the repository.
      * @return ComposerJson|null
      */
-    public function getPackage() : ?ComposerJson
+    public function getPackage(): ?ComposerJson
     {
         return $this->package;
     }

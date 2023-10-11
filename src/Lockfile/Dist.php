@@ -30,7 +30,7 @@ class Dist extends Source
      *
      * @return  string
      */
-    public function getShasum()
+    public function getShasum(): string
     {
         return $this->shasum;
     }
